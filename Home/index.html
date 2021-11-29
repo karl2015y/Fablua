@@ -14,19 +14,25 @@
     <link rel="stylesheet" href="https://unpkg.com/vue-agile/dist/VueAgile.css">
     <link rel="stylesheet" href="css/agile.css">
 
+    <!-- https://fonts.google.com/noto/specimen/Noto+Sans+TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
     <div id="app">
         <!-- 頁首 -->
-        <header class="bg-white desktop:h-28 desktop:px-56 flex h-16 items-center justify-between px-10 sticky tablet:h-24 tablet:px-5 top-0 z-10">
+        <header
+            class="bg-white desktop:h-28 desktop:px-36 flex h-16 items-center justify-between px-10 sticky tablet:h-24 tablet:px-5 top-0 z-10">
             <div class="desktop:text-4xl tablet:text-2xl text-xl font-bold text-main">Fabula</div>
-            <div v-on:click="menu_open=!menu_open" class="flex">
+            <!-- menu 按鈕 -->
+            <div v-on:click="menu_open=!menu_open" class="flex tablet:hidden">
                 <transition name="menu-open-transition" enter-active-class="animate__fadeInLeft animate__faster"
                     leave-active-class="hidden">
-                    <svg v-if="!menu_open" class="animate__animated" xmlns="http://www.w3.org/2000/svg" width="45"
-                        height="45" viewBox="0 0 45 45">
+                    <svg v-if="!menu_open" class="animate__animated w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 45 45">
                         <g id="组_35" data-name="组 35" transform="translate(-2980.245 -37.5)">
                             <rect id="矩形_30" data-name="矩形 30" width="45" height="45"
                                 transform="translate(2980.245 37.5)" fill="none" />
@@ -46,8 +52,8 @@
 
                 <transition name="menu-close-transition" enter-active-class="animate__fadeInRight animate__faster"
                     leave-active-class="hidden">
-                    <svg v-if="menu_open" class="animate__animated" xmlns="http://www.w3.org/2000/svg" width="45"
-                        height="45" viewBox="0 0 45 45">
+                    <svg v-if="menu_open" class="animate__animated w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 45 45">
                         <g id="组_35" data-name="组 35" transform="translate(-2980.245 -37.5)">
                             <rect id="矩形_30" data-name="矩形 30" width="45" height="45"
                                 transform="translate(2980.245 37.5)" fill="none" />
@@ -70,6 +76,24 @@
 
 
             </div>
+            <div :class="{'hidden tablet:block':!menu_open}"
+                class="fixed right-0 tablet:relative tablet:top-auto tablet:w-auto top-16 w-full">
+                <ul
+                    class="bg-white flex flex-col h-screen ml-auto shadow-2xl tablet:flex-row tablet:gap-6 tablet:h-auto tablet:shadow-none tablet:w-auto text-center w-1/2">
+                    <li class="h-16 flex justify-center items-center shadow-inner tablet:shadow-none">
+                        <a href="#關於我們">關於我們</a>
+                    </li>
+                    <li
+                        class="h-16 flex justify-center items-center shadow-inner tablet:shadow-none bg-sec text-white tablet:text-sec tablet:bg-white">
+                        <a href="#精選故事">精選故事</a>
+                    </li>
+                    <li class="flex h-16 items-center justify-center shadow-inner tablet:shadow-none">
+                        <a href="#商企招募">商企招募</a>
+                    </li>
+                </ul>
+            </div>
+
+
         </header>
         <!-- 輪播 -->
         <section>
@@ -81,7 +105,7 @@
                         class="absolute bg-gradient-to-b bottom-0 h-72 left-0 to-black w-full"></div>
                     <!-- 圖片文字 -->
                     <div
-                        class="absolute text-white px-10 tablet:px-40 desktop:px-96 bottom-20 tablet:bottom-32 desktop:bottom-48 font-normal">
+                        class="absolute text-white px-10 tablet:px-40 desktop:px-72 bottom-20 tablet:bottom-24 desktop:bottom-32 font-normal">
                         <h1 class="text-center text-3xl desktop:text-4xl font-bold mb-6">協助推廣在地商家</h1>
                         <p>
                             A paragraph is a series of sentences that are organized and coherent, and are all related to
@@ -100,8 +124,8 @@
                         class="absolute bg-gradient-to-b bottom-0 h-72 left-0 to-black w-full"></div>
                     <!-- 圖片文字 -->
                     <div
-                        class="absolute text-white px-10 tablet:px-40 desktop:px-96 bottom-20 tablet:bottom-28 desktop:bottom-48 font-normal">
-                        <h1 class="text-center text-3xl desktop:text-4xl font-bold mb-6">2協2助2推2廣在地商家</h1>
+                        class="absolute text-white px-10 tablet:px-40 desktop:px-72 bottom-20 tablet:bottom-24 desktop:bottom-32 font-normal">
+                        <h1 class="text-center text-3xl desktop:text-4xl font-bold mb-6">協2助2推廣在2地商家</h1>
                         <p>
                             A paragraph is a series of sentences that are organized and coherent, and are all related to
                             a single topic. Almost every piece of writing you do that is longer than a few sentences

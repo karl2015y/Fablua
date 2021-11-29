@@ -1,5 +1,5 @@
 .agile__dots {
-  bottom: 50px;
+  bottom: 25px;
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
@@ -27,7 +27,7 @@
 
 .slide {
   display: block;
-  height: 800px;
+  height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;

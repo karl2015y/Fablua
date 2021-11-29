@@ -604,15 +604,15 @@ video {
   width: 100%;
 }
 
-@media (min-width: 881px) {
+@media (min-width: 441px) {
   .container {
-    max-width: 881px;
+    max-width: 441px;
   }
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 961px) {
   .container {
-    max-width: 1441px;
+    max-width: 961px;
   }
 }
 
@@ -6926,11 +6926,11 @@ video {
 }
 
 .max-w-screen-tablet {
-  max-width: 881px;
+  max-width: 441px;
 }
 
 .max-w-screen-desktop {
-  max-width: 1441px;
+  max-width: 961px;
 }
 
 .flex-1 {
@@ -32755,20 +32755,40 @@ video {
   content: none;
 }
 
-@media (min-width: 881px) {
+@font-face {
+  font-family: "Merriweather";
+
+  src: url("../fonts/Merriweather-Bold.ttf?jolgxp") format("truetype");
+
+  font-weight: Bold;
+
+  font-style: Bold;
+
+  font-display: block;
+}
+
+body{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.MW-font{
+  font-family: 'Merriweather' !important;
+}
+
+@media (min-width: 441px) {
   .tablet\:container {
     width: 100%;
   }
 
-  @media (min-width: 881px) {
+  @media (min-width: 441px) {
     .tablet\:container {
-      max-width: 881px;
+      max-width: 441px;
     }
   }
 
-  @media (min-width: 1441px) {
+  @media (min-width: 961px) {
     .tablet\:container {
-      max-width: 1441px;
+      max-width: 961px;
     }
   }
 
@@ -39082,11 +39102,11 @@ video {
   }
 
   .tablet\:max-w-screen-tablet {
-    max-width: 881px;
+    max-width: 441px;
   }
 
   .tablet\:max-w-screen-desktop {
-    max-width: 1441px;
+    max-width: 961px;
   }
 
   .tablet\:flex-1 {
@@ -64481,20 +64501,20 @@ video {
   }
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 961px) {
   .desktop\:container {
     width: 100%;
   }
 
-  @media (min-width: 881px) {
+  @media (min-width: 441px) {
     .desktop\:container {
-      max-width: 881px;
+      max-width: 441px;
     }
   }
 
-  @media (min-width: 1441px) {
+  @media (min-width: 961px) {
     .desktop\:container {
-      max-width: 1441px;
+      max-width: 961px;
     }
   }
 
@@ -70808,11 +70828,11 @@ video {
   }
 
   .desktop\:max-w-screen-tablet {
-    max-width: 881px;
+    max-width: 441px;
   }
 
   .desktop\:max-w-screen-desktop {
-    max-width: 1441px;
+    max-width: 961px;
   }
 
   .desktop\:flex-1 {

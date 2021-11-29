@@ -1,8 +1,8 @@
 // 當調整畫面大小時
 
 function reportWindowSize() {
-    const DesktopSize = 1920;
-    const PhoneSize = 880;
+    const DesktopSize = 960;
+    const PhoneSize = 440;
     let currentSize = window.innerWidth;
     let fs = 16;
     console.log();
@@ -17,7 +17,7 @@ function reportWindowSize() {
     document.querySelector('html').style.fontSize=`${fs}px`
 }
 
-window.onresize = reportWindowSize;
+// window.onresize = reportWindowSize;
 window.addEventListener("load", function(event) {
-    reportWindowSize()
+    // reportWindowSize()
   });
