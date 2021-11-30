@@ -1,5 +1,5 @@
 .agile__dots {
-  bottom: 25px;
+  bottom: 5vw;
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
@@ -37,8 +37,8 @@
   .slide {
     height:41.66vw;
   }
-  /* .agile__dots {
-    bottom: 30px;
-  } */
+  .agile__dots {
+    bottom: 2.927vw;
+  }
 
 }
