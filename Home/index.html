@@ -5,14 +5,14 @@
     <!-- ... -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="css/style.css?v=202111301211" rel="stylesheet">
-    <script src="js/index.js?v=202111301211"></script>
+    <link href="css/style.css?v=202111302243" rel="stylesheet">
+    <script src="js/index.js?v=202111302243"></script>
     <script src="https://unpkg.com/spacingjs" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://unpkg.com/vue-agile"></script>
     <link rel="stylesheet" href="https://unpkg.com/vue-agile/dist/VueAgile.css">
-    <link rel="stylesheet" href="css/agile.css?v=202111301211">
+    <link rel="stylesheet" href="css/agile.css?v=202111302243">
 
     <!-- https://fonts.google.com/noto/specimen/Noto+Sans+TC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,119 +22,89 @@
 </head>
 
 <body>
-    <div id="app">
+    <!-- <div class="xl:" style="position: fixed;top: 0;left: 0;width: 100vw;height: 5354px;background-image: url(https://upload.cc/i1/2021/11/30/JIrngt.jpg);z-index: 100;opacity: 1;background-size: contain;"></div> -->
+    <!-- <div style="background-size: contain;position: fixed;top: 0;left: 0;width: 440px;height: 5354px;background-image: url(/zdesign/home/Fablua-Layout-1-Mobile.jpg);z-index: 100;opacity: 0.7;"></div> -->
+    <div id="app" class="">
         <!-- 頁首 -->
-        <header
-            class="bg-white desktop:h-28 desktop:px-36 flex h-16 items-center justify-between px-10 sticky tablet:h-24 tablet:px-5 top-0 z-10">
-            <div class="desktop:text-4xl tablet:text-2xl text-xl font-bold text-main MW-font">Fabula</div>
+        <header class="z-10 shadow sticky flex justify-between items-center h-16 px-10 md:px-14 lg:px-56">
+            <div class="MW-font font-bold text-main text-3xl ">Fabula</div>
             <!-- menu 按鈕 -->
-            <div v-on:click="menu_open=!menu_open" class="flex tablet:hidden">
-                <transition name="menu-open-transition" enter-active-class="animate__fadeInLeft animate__faster"
-                    leave-active-class="hidden">
-                    <svg v-if="!menu_open" class="animate__animated w-6 h-6" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 45 45">
-                        <g id="组_35" data-name="组 35" transform="translate(-2980.245 -37.5)">
-                            <rect id="矩形_30" data-name="矩形 30" width="45" height="45"
-                                transform="translate(2980.245 37.5)" fill="none" />
-                            <g id="组_34" data-name="组 34">
-                                <g id="组_33" data-name="组 33">
-                                    <rect id="矩形_31" data-name="矩形 31" width="45" height="5" rx="2.5"
-                                        transform="translate(2980.245 42.5)" fill="#4d4d4d" />
-                                    <rect id="矩形_32" data-name="矩形 32" width="22.5" height="5" rx="2.5"
-                                        transform="translate(3002.745 72.5)" fill="#4d4d4d" />
-                                    <rect id="矩形_33" data-name="矩形 33" width="33.75" height="5" rx="2.5"
-                                        transform="translate(2991.495 57.5)" fill="#4d4d4d" />
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                </transition>
+            <div>
+                <div v-on:click="menu_open=!menu_open"
+                    class="md:hidden w-7 h-5 flex flex-col justify-between overflow-hidden">
+                    <div :class="{'-translate-x-0.5':menu_open}"
+                        class="bg-third w-full h-1 rounded-full transform translate-x-0.5 transition-transform	"></div>
+                    <div :class="{'-translate-x-1/2':menu_open}"
+                        class="bg-third w-full h-1 rounded-full transform translate-x-1/4 transition-transform	delay-75">
+                    </div>
+                    <div :class="{'-translate-x-1/4':menu_open}"
+                        class="bg-third w-full h-1 rounded-full transform translate-x-1/2 transition-transform	delay-150">
+                    </div>
+                </div>
+                <div v-on:click="menu_open=!menu_open" :class="{'translate-x-full':!menu_open}"
+                    class="fixed h-screen left-0 md:h-auto md:static md:translate-x-0 md:w-auto top-16 transition-transform ease-in-out duration-500 transform translate-x-0 w-full">
 
-                <transition name="menu-close-transition" enter-active-class="animate__fadeInRight animate__faster"
-                    leave-active-class="hidden">
-                    <svg v-if="menu_open" class="animate__animated w-6 h-6" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 45 45">
-                        <g id="组_35" data-name="组 35" transform="translate(-2980.245 -37.5)">
-                            <rect id="矩形_30" data-name="矩形 30" width="45" height="45"
-                                transform="translate(2980.245 37.5)" fill="none" />
-                            <g id="组_34" data-name="组 34">
-                                <g id="组_33" data-name="组 33">
-                                    <rect id="矩形_31" data-name="矩形 31" width="45" height="5" rx="2.5"
-                                        transform="translate(2980.245 42.5)" fill="#4d4d4d" />
-                                    <rect id="矩形_32" data-name="矩形 32" width="22.5" height="5" rx="2.5"
-                                        transform="translate(2980.245 57.5)" fill="#4d4d4d" />
-                                    <rect id="矩形_33" data-name="矩形 33" width="33.75" height="5" rx="2.5"
-                                        transform="translate(2980.245 72.5)" fill="#4d4d4d" />
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-
-                </transition>
-
-
-
-
-            </div>
-            <div :class="{'hidden tablet:block':!menu_open}"
-                class="fixed right-0 tablet:relative tablet:top-auto tablet:w-auto top-16 w-full">
-                <ul
-                    class="bg-white flex flex-col h-screen ml-auto shadow-2xl tablet:flex-row tablet:gap-6 tablet:h-auto tablet:shadow-none tablet:w-auto text-center w-1/2">
-                    <li class="h-16 flex justify-center items-center shadow-inner tablet:shadow-none">
-                        <a href="#關於我們">關於我們</a>
-                    </li>
-                    <li
-                        class="h-16 flex justify-center items-center shadow-inner tablet:shadow-none bg-sec text-white tablet:text-sec tablet:bg-white">
-                        <a href="#精選故事">精選故事</a>
-                    </li>
-                    <li class="flex h-16 items-center justify-center shadow-inner tablet:shadow-none">
-                        <a href="#商企招募">商企招募</a>
-                    </li>
-                </ul>
+                    <ul
+                        class="md:bg-transparent bg-gray-50 flex flex-col lg:gap-14 md:gap-5 h-screen md:flex-row md:h-auto md:shadow-none md:w-auto ml-auto shadow-2xl text-center w-1/2">
+                        <li class="md:shadow-none shadow-inner h-16 flex items-center justify-center border-b">關於我們</li>
+                        <li
+                            class="h-16 flex items-center justify-center border-b bg-sec text-white md:bg-transparent md:text-sec">
+                            精選故事</li>
+                        <li class="h-16 flex items-center justify-center border-b">商企招募</li>
+                    </ul>
+                </div>
             </div>
 
 
         </header>
+
         <!-- 輪播 -->
         <section>
-            <agile :nav-buttons="false" :autoplay-speed="5000" :speed="2500" fade="fade" pause-on-hover="pause-on-hover"
-                pause-on-dots-hover="pause-on-dots-hover" autoplay="autoplay">
+
+            <agile :nav-buttons="false" :autoplay-speed="7500"  :speed="2500" autoplay="autoplay">
+
                 <div class="relative ">
                     <!-- 圖片陰影 -->
                     <div style="--tw-gradient-from: rgb(255 255 255 / 0%);--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 255, 0));"
-                        class="absolute bg-gradient-to-b bottom-0 h-72 left-0 to-black w-full"></div>
+                        class="absolute bg-gradient-to-b bottom-0 h-2/3 left-0 to-black w-full"></div>
                     <!-- 圖片文字 -->
-                    <div
-                        class="absolute text-white px-10 tablet:px-40 desktop:px-72 bottom-20 tablet:bottom-24 desktop:bottom-32 font-normal">
-                        <h1 class="text-center text-3xl desktop:text-4xl font-bold mb-6">協助推廣在地商家</h1>
-                        <p>
-                            A paragraph is a series of sentences that are organized and coherent, and are all related to
-                            a single topic. Almost every piece of writing you do that is longer than a few sentences
-                            should be organized into paragraphs.
-                        </p>
+                    <div 
+                        class="text-white px-10 md:px-14 lg:px-56 absolute left-0 top-0 w-full h-full flex flex-col items-center justify-center">
+                        <div class="md:px-40 lg:px-48">
+                            <h1 class="text-center text-3xl desktop:text-5xl font-bold mb-6">協2助2推廣在2地商家</h1>
+                            <p>
+                                B paragraph is a series of sentences that are organized and coherent, and are all
+                                related to
+                                a single topic. Almost every piece of writing you do that is longer than a few sentences
+                                should be organized into paragraphs.
+                            </p>
+                        </div>
+
                     </div>
                     <!-- 圖片 -->
-                    <img class="slide"
-                        src="https://images.unsplash.com/photo-1509549649946-f1b6276d4f35?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ" />
+                    <img class="slide" src="./img/1.jpeg" />
 
                 </div>
                 <div class="relative ">
                     <!-- 圖片陰影 -->
                     <div style="--tw-gradient-from: rgb(255 255 255 / 0%);--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 255, 0));"
-                        class="absolute bg-gradient-to-b bottom-0 h-72 left-0 to-black w-full"></div>
+                        class="absolute bg-gradient-to-b bottom-0 h-2/3 left-0 to-black w-full"></div>
                     <!-- 圖片文字 -->
-                    <div
-                        class="absolute text-white px-10 tablet:px-40 desktop:px-72 bottom-20 tablet:bottom-24 desktop:bottom-32 font-normal">
-                        <h1 class="text-center text-3xl desktop:text-4xl font-bold mb-6">協2助2推廣在2地商家</h1>
-                        <p>
-                            A paragraph is a series of sentences that are organized and coherent, and are all related to
-                            a single topic. Almost every piece of writing you do that is longer than a few sentences
-                            should be organized into paragraphs.
-                        </p>
+                    <div 
+                        class="text-white px-10 md:px-14 lg:px-56 absolute left-0 top-0 w-full h-full flex flex-col items-center justify-center">
+                        <div class="md:px-40 lg:px-48">
+                            <h1 class="text-center text-3xl desktop:text-5xl font-bold mb-6">協2助2推廣在2地商家</h1>
+                            <p>
+                                B paragraph is a series of sentences that are organized and coherent, and are all
+                                related to
+                                a single topic. Almost every piece of writing you do that is longer than a few sentences
+                                should be organized into paragraphs.
+                            </p>
+                        </div>
+
                     </div>
                     <!-- 圖片 -->
-                    <img class="slide"
-                        src="https://images.unsplash.com/photo-1511469054436-c7dedf24c66b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9" />
+                    <img class="slide" src="./img/2.jpeg" />
 
                 </div>
                 <!-- <img class="slide"

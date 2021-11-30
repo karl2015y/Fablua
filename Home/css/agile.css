@@ -27,8 +27,18 @@
 
 .slide {
   display: block;
-  height: 400px;
+  height: 26.737rem;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .slide {
+    height:41.66vw;
+  }
+  /* .agile__dots {
+    bottom: 30px;
+  } */
+
 }
