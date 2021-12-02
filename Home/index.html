@@ -19,6 +19,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
 </head>
 
 <body>
@@ -26,27 +28,31 @@
     <!-- <div style="background-size: contain;position: fixed;top: 0;left: 0;width: 440px;height: 5354px;background-image: url(/zdesign/home/Fablua-Layout-1-Mobile.jpg);z-index: 100;opacity: 0.7;"></div> -->
     <div id="app" class="">
         <!-- 頁首 -->
-        <header class="z-10 shadow sticky flex justify-between items-center h-16 md:h-32 px-10 md:px-14 lg:px-56">
+        <header
+            class="top-0 bg-white z-10 shadow sticky flex justify-between items-center h-16 md:h-32 px-10 md:px-14 lg:px-56">
             <div class="MW-font font-bold text-main text-3xl ">Fabula</div>
             <!-- menu 按鈕 -->
             <div>
-                <div v-on:click="menu_open=!menu_open"
+                <div v-on:click="menu_open=!menu_open" :class="menu_open?'items-start':'items-end'"
                     class="md:hidden w-7 h-5 flex flex-col justify-between overflow-hidden">
-                    <div :class="{'-translate-x-0.5':menu_open}"
-                        class="bg-third w-full h-1 rounded-full transform translate-x-0.5 transition-transform	"></div>
-                    <div :class="{'-translate-x-1/2':menu_open}"
-                        class="bg-third w-full h-1 rounded-full transform translate-x-1/4 transition-transform	delay-75">
+                    <div :class="{'animate__slideInLeft':menu_open, 'animate__slideInRight':!menu_open}"
+                        class="animate__animated animate__faster bg-third w-full h-1 rounded-full transform transition-transform	">
                     </div>
-                    <div :class="{'-translate-x-1/4':menu_open}"
-                        class="bg-third w-full h-1 rounded-full transform translate-x-1/2 transition-transform	delay-150">
+                    <div :class="{'w-3/4 ':!menu_open}"
+                        class="bg-third w-1/2 h-1 rounded-full transform  transition-all duration-700">
+                    </div>
+                    <div :class="{'w-3/4':menu_open}"
+                        class="bg-third w-1/2 h-1 rounded-full transform transition-all duration-300">
                     </div>
                 </div>
-                <div v-on:click="menu_open=!menu_open" :class="{'translate-x-full':!menu_open}"
-                    class="fixed h-screen left-0 md:h-auto md:static md:translate-x-0 md:w-auto top-16 transition-transform ease-in-out duration-500 transform translate-x-0 w-full">
+                <div v-on:click="menu_open=!menu_open" :class="{'w-full':menu_open}"
+                    class="fixed h-screen right-0 md:h-auto md:static md:w-full md:w-auto top-16 transition-all ease-in-out duration-500 w-0">
 
                     <ul
-                        class="md:bg-transparent bg-gray-50 flex flex-col lg:gap-14 md:gap-5 h-screen md:flex-row md:h-auto md:shadow-none md:w-auto ml-auto shadow-2xl text-center w-1/2">
-                        <li class="md:shadow-none shadow-inner h-16 flex items-center justify-center border-b md:border-0">關於我們</li>
+                        class="overflow-hidden md:bg-transparent bg-gray-50 flex flex-col lg:gap-14 md:gap-5 h-screen md:flex-row md:h-auto md:shadow-none md:w-auto ml-auto shadow-2xl text-center w-1/2">
+                        <li
+                            class="md:shadow-none shadow-inner h-16 flex items-center justify-center border-b md:border-0">
+                            關於我們</li>
                         <li
                             class="h-16 flex items-center justify-center border-b md:border-0 bg-sec text-white md:bg-transparent md:text-sec">
                             精選故事</li>
@@ -61,14 +67,14 @@
         <!-- 輪播 -->
         <section>
 
-            <agile :nav-buttons="false" :autoplay-speed="7500"  :speed="2500" autoplay="autoplay">
+            <agile :nav-buttons="false" :autoplay-speed="7500" :speed="500" autoplay="autoplay">
 
                 <div class="relative ">
                     <!-- 圖片陰影 -->
                     <div style="--tw-gradient-from: rgb(255 255 255 / 0%);--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 255, 0));"
                         class="absolute bg-gradient-to-b bottom-0 h-2/3 left-0 to-black w-full"></div>
                     <!-- 圖片文字 -->
-                    <div 
+                    <div
                         class="text-white px-10 md:px-14 lg:px-56 absolute left-0 top-0 w-full h-full flex flex-col items-center justify-center">
                         <div class="md:px-40 lg:px-48">
                             <h1 class="text-center text-3xl desktop:text-5xl font-bold mb-6">協2助2推廣在2地商家</h1>
@@ -90,7 +96,7 @@
                     <div style="--tw-gradient-from: rgb(255 255 255 / 0%);--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 255, 0));"
                         class="absolute bg-gradient-to-b bottom-0 h-2/3 left-0 to-black w-full"></div>
                     <!-- 圖片文字 -->
-                    <div 
+                    <div
                         class="text-white px-10 md:px-14 lg:px-56 absolute left-0 top-0 w-full h-full flex flex-col items-center justify-center">
                         <div class="md:px-40 lg:px-48">
                             <h1 class="text-center text-3xl desktop:text-5xl font-bold mb-6">協2助2推廣在2地商家</h1>
@@ -107,18 +113,184 @@
                     <img class="slide" src="./img/2.jpeg" />
 
                 </div>
-                <!-- <img class="slide"
-                src="https://images.unsplash.com/photo-1511469054436-c7dedf24c66b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9" />
-            <img class="slide"
-                src="https://images.unsplash.com/photo-1511135232973-c3ee80040060?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9" />
-            <img class="slide"
-                src="https://images.unsplash.com/photo-1511231683436-44735d14c11c?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9" />
-            <img class="slide"
-                src="https://images.unsplash.com/photo-1517677129300-07b130802f46?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9" /> -->
+
             </agile>
 
         </section>
+        <!-- 精選故事 -->
+        <section class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-36  py-40">
+            <div class="">
+                <h1 class="font-bold text-2xl text-center text-main mb-5 lg:mb-6">精選故事</h1>
+                <p class="mb-20 lg:mb-16 text-third">
+                    文章除了標題要吸睛、內容要精彩之外，閱讀的舒適度也是非常重要的，唯有讓讀者眼睛感到舒服了，他們也才更願意看下去。如果說標題是為了吸引人看你，那第一個段落就是讓人更想了解你，而內文的舒適度則決定讀者願不願意繼續和你相處。
+                </p>
+            </div>
+            <!-- 六個文章(前三) -->
+            <div class="flex justify-between flex-wrap">
+                <a v-for="i in 3">
+                    <div class="w-full lg:w-80 md:w-52 pb-7">
+                        <div class="w-full md:w-auto md:h-auto">
+                            <img class="h-full w-full" src="./img/1.jpeg" />
 
+                        </div>
+                        <div>
+                            <h2 class="mt-5 md:mt-4 text-lg text-main font-medium">文章示範標題</h2>
+                            <p class="mt-2 md:mt-3 w-96 md:w-auto text-gray-600">內文重點示範文字 ， 字數限制如敘述內可容納之...</p>
+                            <div class="whitespace-nowrap my-3 pb-1.5 border-b text-gray-500 w-16 border-gray-500">閱讀更多
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- 六個文章(後三) -->
+            <div class="mt-0 md:mt-10 flex justify-between flex-wrap">
+                <a v-for="i in 3">
+                    <div class="w-full md:w-52 lg:w-80 pb-7 md:pb-3 flex gap-5 md:block">
+                        <div class="w-32 h-24 md:w-auto md:h-auto">
+                            <img class="h-full w-full" src="./img/1.jpeg" />
+
+                        </div>
+                        <div>
+                            <h2 class="mt-1 md:mt-4 text-lg text-main font-medium">文章示範標題</h2>
+                            <p class="mt-2 md:mt-3 w-56 md:w-auto text-gray-600">內文重點示範文字 ， 字數限制如敘述內可容納之...</p>
+                            <div
+                                class="hidden md:block whitespace-nowrap my-3 pb-1.5 border-b text-gray-500 w-16 border-gray-500">
+                                閱讀更多</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mt-20 md:mt-16 pt-2 text-center">
+                <a class="bg-sec text-white px-7 py-2 md:px-9 md:py-3">看更多故事</a>
+            </div>
+
+        </section>
+
+        <!-- 視差圖 -->
+        <section class="h-48 md:h-64">
+            <!-- <div style="background-image: url('./img/1.jpeg');" class="h-full bg-fixed bg-center bg-no-repeat bg-cover"></div> -->
+            <div class=" h-full overflow-hidden relative">
+                <img src="./img/1.jpeg" style="z-index: -10;"
+                    class="absolute offset-img fixed top-0 left-0 h-screen w-full object-cover object-center">
+            </div>
+
+        </section>
+        <!-- 關於我們 -->
+        <section class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-16  py-20 bg-gray-50">
+            <div class="md:flex gap-20">
+                <div>
+                    <h1 class="font-bold text-2xl text-center text-main mb-5 lg:mb-6">
+                        <span>關於我們</span>
+                    </h1>
+                    <p class="mb-14 lg:mb-16 text-third">
+                        文章除了標題要吸睛、內容要精彩之外，閱讀的舒適度也是非常重要的，唯有讓讀者眼睛感到舒服了，他們也才更願意看下去。如果說標題是為了吸引人看你，那第一個段落就是讓人更想了解你，而內文的舒適度則決定讀者願不願意繼續和你相處。
+                    </p>
+                </div>
+                <div class="w-full h-auto">
+                    <img class="h-full w-full" src="./img/1.jpeg" />
+                </div>
+            </div>
+        </section>
+        <!-- 商家企業招募 -->
+        <section class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-16  py-20 ">
+            <h1 class="font-bold text-2xl text-center text-main mb-6">
+                <span>商家企業招募</span>
+            </h1>
+            <form action="" method="post" class="flex flex-col items-center">
+                <div class="md:flex gap-3.5 w-full">
+                    <input type="text" placeholder="姓名 /  稱謂" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="店家 / 公司行號" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="行業別" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
+                </div>
+                <div class="md:flex gap-3.5 w-full">
+                    <input type="text" placeholder="聯絡電話" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="Email" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="所在區域" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
+                </div>
+
+                <textarea placeholder="寫下您的留言" class="w-full bg-gray-100 py-5 px-7 mb-12 h-44"></textarea>
+                <button type="button" class="bg-main text-white font-medium w-20 h-10"><span>送出</span></button>
+            </form>
+        </section>
+
+        <!-- 頁尾 -->
+        <footer class="px-10 py-14 bg-third text-white md:px-60">
+            <div class="flex ">
+                <div class="flex flex-col md:flex-row gap-10 md:w-3/4">
+                    <div class="md:w-1/3">
+                        <h1 class="text-2xl MW-font font-bold ">Fabula</h1>
+                        <span class="hidden md:block mt-1.5 text-gray-400 text-xs">
+                            Copyright © 2021 Fabula.<br>
+                            All rights reserved.
+                        </span>
+                    </div>
+                    <div class="md:w-1/3">
+                        <h2 class="text-lg MW-font font-bold "><span>Contact</span></h2>
+                        <div class="mt-3 md:mt-4 text-sm">
+                            <span>OOOOOO有限公司</span><br>
+                            <a>+886 1234 5678</a><br>
+                            <a>service@company.com</a>
+
+                        </div>
+                    </div>
+                    <div class="md:w-1/3">
+                        <h2 class="text-lg MW-font font-bold">Terms</h2>
+                        <div class="mt-3 md:mt-4 text-sm">
+                            <a>隱私權政策</a><br>
+                            <a>注意事項</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="pl-14 flex flex-col justify-end md:w-1/4 md:justify-start">
+                    <h2 class="text-lg MW-font font-bold ">Media</h2>
+                    <div class="mt-2.5 md:mt-4 flex gap-3.5">
+                        <a>
+                            <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 70 69.574">
+                                <path id="路径_3" data-name="路径 3"
+                                    d="M2797.491,9010.364a35,35,0,0,0-5.468,69.574v-24.457h-8.887v-10.117h8.887v-7.711c0-8.772,5.225-13.617,13.219-13.617a53.89,53.89,0,0,1,7.835.683v8.614h-4.413c-4.348,0-5.7,2.7-5.7,5.465v6.566h9.707l-1.552,10.117h-8.155v24.457a35,35,0,0,0-5.469-69.574Z"
+                                    transform="translate(-2762.491 -9010.364)" fill="#6ca27f" />
+                            </svg>
+
+                        </a>
+                        <a>
+                            <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+                                <g id="组_15" data-name="组 15" transform="translate(-2858.68 -9010.364)">
+                                    <path id="路径_4" data-name="路径 4"
+                                        d="M2893.68,9038.018a7.346,7.346,0,1,0,7.346,7.347A7.345,7.345,0,0,0,2893.68,9038.018Z"
+                                        fill="#fff" />
+                                    <path id="路径_5" data-name="路径 5"
+                                        d="M2910.859,9032.367a7.3,7.3,0,0,0-4.182-4.183,12.206,12.206,0,0,0-4.092-.759c-2.324-.105-3.021-.129-8.905-.129s-6.581.023-8.905.129a12.214,12.214,0,0,0-4.092.759,7.3,7.3,0,0,0-4.182,4.183,12.182,12.182,0,0,0-.759,4.092c-.106,2.324-.128,3.021-.128,8.905s.022,6.581.128,8.9a12.2,12.2,0,0,0,.759,4.093,7.3,7.3,0,0,0,4.182,4.182,12.17,12.17,0,0,0,4.092.758c2.324.106,3.021.129,8.905.129s6.582-.022,8.905-.129a12.162,12.162,0,0,0,4.092-.758,7.3,7.3,0,0,0,4.182-4.182,12.189,12.189,0,0,0,.759-4.093c.106-2.323.129-3.021.129-8.9s-.023-6.581-.129-8.905A12.176,12.176,0,0,0,2910.859,9032.367Zm-17.179,24.313A11.316,11.316,0,1,1,2905,9045.364,11.315,11.315,0,0,1,2893.68,9056.68Zm11.764-20.435a2.645,2.645,0,1,1,2.644-2.646A2.645,2.645,0,0,1,2905.444,9036.245Z"
+                                        fill="#fff" />
+                                    <path id="路径_6" data-name="路径 6"
+                                        d="M2893.68,9010.364a35,35,0,1,0,35,35A35,35,0,0,0,2893.68,9010.364Zm21.905,44.086a16.16,16.16,0,0,1-1.025,5.349,11.271,11.271,0,0,1-6.445,6.445,16.149,16.149,0,0,1-5.349,1.023c-2.35.108-3.1.134-9.086.134s-6.735-.025-9.086-.134a16.16,16.16,0,0,1-5.349-1.023,11.271,11.271,0,0,1-6.445-6.445,16.162,16.162,0,0,1-1.024-5.349c-.107-2.352-.133-3.1-.133-9.086s.026-6.735.133-9.086a16.169,16.169,0,0,1,1.024-5.35,11.273,11.273,0,0,1,6.445-6.444,16.182,16.182,0,0,1,5.349-1.024c2.351-.108,3.1-.133,9.086-.133s6.736.024,9.086.133a16.172,16.172,0,0,1,5.349,1.024,11.273,11.273,0,0,1,6.445,6.444,16.166,16.166,0,0,1,1.025,5.35c.107,2.351.132,3.1.132,9.086S2915.692,9052.1,2915.585,9054.45Z"
+                                        fill="#fff" />
+                                </g>
+                            </svg>
+
+
+                        </a>
+                        <a>
+                            <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+                                <g id="组_16" data-name="组 16" transform="translate(-2954.869 -9010.364)">
+                                    <path id="路径_7" data-name="路径 7" d="M2985.2,9052.364l12.124-7-12.124-7Z"
+                                        fill="#fff" />
+                                    <path id="路径_8" data-name="路径 8"
+                                        d="M2989.869,9010.364a35,35,0,1,0,35,35A35,35,0,0,0,2989.869,9010.364Zm22.358,46.231a5.845,5.845,0,0,1-4.125,4.126c-3.64.977-18.233.977-18.233.977s-14.593,0-18.232-.977a5.846,5.846,0,0,1-4.126-4.126c-.975-3.639-.975-11.231-.975-11.231s0-7.593.975-11.232a5.846,5.846,0,0,1,4.126-4.126c3.639-.976,18.232-.976,18.232-.976s14.593,0,18.233.976a5.845,5.845,0,0,1,4.125,4.126c.976,3.64.976,11.232.976,11.232S3013.2,9052.957,3012.227,9056.6Z"
+                                        fill="#fff" />
+                                    <path id="路径_9" data-name="路径 9" d="M2985.2,9052.364v-14l12.123,7Z" fill="#fff" />
+                                </g>
+                            </svg>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden mt-9 text-gray-400 text-xs">
+                Copyright © 2021 Fabula. All rights reserved.
+            </div>
+        </footer>
     </div>
     <script src="js/home.js"></script>
 </body>
