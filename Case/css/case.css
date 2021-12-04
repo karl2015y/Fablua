@@ -1,0 +1,15 @@
+
+.hero-img {
+    display: block;
+    height: 26.737rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  
+
+@media (min-width: 768px) {
+    .hero-img {
+      height:41.66vw;
+    }
+  }

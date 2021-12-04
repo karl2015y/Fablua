@@ -6,7 +6,7 @@ function reportWindowSize() {
     let currentSize = window.innerWidth;
     let fs = 16;
     console.log(currentSize, PhoneSize);
-    if(currentSize<=PhoneSize){
+    if(currentSize<PhoneSize){
         fs = 3.4;
     }else if(currentSize>DesktopSize){
         fs = 1.1;

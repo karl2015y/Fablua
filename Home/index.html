@@ -5,14 +5,16 @@
     <!-- ... -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="css/style.css?v=202112031725" rel="stylesheet">
-    <script src="js/index.js?v=202112031725"></script>
+
+    <link href="/Asset/css/style.css?v=202112041622" rel="stylesheet">
+    <script src="/Asset/js/index.js?v=202112041622"></script>
+
     <script src="https://unpkg.com/spacingjs" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://unpkg.com/vue-agile"></script>
     <link rel="stylesheet" href="https://unpkg.com/vue-agile/dist/VueAgile.css">
-    <link rel="stylesheet" href="css/agile.css?v=202112031725">
+    <link rel="stylesheet" href="/Asset/css/agile.css?v=202112041622">
 
     <!-- https://fonts.google.com/noto/specimen/Noto+Sans+TC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -118,7 +120,7 @@
 
         </section>
         <!-- 精選故事 -->
-        <section class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-36  py-40">
+        <section class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-36  py-20">
             <div class="">
                 <h1 class="font-bold text-2xl text-center text-main mb-5 lg:mb-6">精選故事</h1>
                 <p class="mb-20 lg:mb-16 text-third">
@@ -128,12 +130,12 @@
             <!-- 六個文章(前三) -->
             <div class="flex justify-between flex-wrap">
                 <a v-for="i in 3">
-                    <div class="w-full lg:w-80 md:w-52 pb-7">
+                    <div class="w-full lg:w-80 md:w-52 mb-3.5 pb-3.5 md:mb-0 md:pb-7 hover:shadow-xl">
                         <div class="w-full md:w-auto md:h-auto">
                             <img class="h-full w-full" src="./img/1.jpeg" />
 
                         </div>
-                        <div>
+                        <div class="lg:px-4 md:px-2 px-1">
                             <h2 class="mt-5 md:mt-4 text-lg text-main font-medium">文章示範標題</h2>
                             <p class="mt-2 md:mt-3 w-96 md:w-auto text-gray-600">內文重點示範文字 ， 字數限制如敘述內可容納之...</p>
                             <div class="whitespace-nowrap my-3 pb-1.5 border-b text-gray-500 w-16 border-gray-500">閱讀更多
@@ -146,13 +148,13 @@
             <div class="mt-0 md:mt-10 flex justify-between flex-wrap">
                 <a v-for="i in 3">
                     <div class="w-full md:w-52 lg:w-80 pb-7 md:pb-3 flex gap-5 md:block">
-                        <div class="w-32 h-24 md:w-auto md:h-auto">
+                        <div class="w-32 h-24 md:w-auto md:h-auto" style="min-width: 8rem;">
                             <img class="h-full w-full" src="./img/1.jpeg" />
 
                         </div>
                         <div>
                             <h2 class="mt-1 md:mt-4 text-lg text-main font-medium">文章示範標題</h2>
-                            <p class="mt-2 md:mt-3 w-56 md:w-auto text-gray-600">內文重點示範文字 ， 字數限制如敘述內可容納之...</p>
+                            <p class="mt-2 md:mt-3 md:w-auto text-gray-600">內文重點示範文字 ， 字數限制如敘述內可容納之...</p>
                             <div
                                 class="hidden md:block whitespace-nowrap my-3 pb-1.5 border-b text-gray-500 w-16 border-gray-500">
                                 閱讀更多</div>
@@ -160,7 +162,7 @@
                     </div>
                 </a>
             </div>
-            <div class="mt-20 md:mt-16 pt-2 text-center">
+            <div class="mt-7 md:mt-16 pt-2 text-center">
                 <a class="bg-sec text-white px-7 py-2 md:px-9 md:py-3">看更多故事</a>
             </div>
 
@@ -176,10 +178,10 @@
 
         </section>
         <!-- 關於我們 -->
-        <section class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-16  py-20 bg-gray-50">
+        <section class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-32  py-20 bg-gray-50">
             <div class="md:flex gap-20">
                 <div>
-                    <h1 class="font-bold text-2xl text-center text-main mb-5 lg:mb-6">
+                    <h1 class="font-bold text-2xl text-center text-main mb-5 lg:mb-6 md:text-left">
                         <span>關於我們</span>
                     </h1>
                     <p class="mb-14 lg:mb-16 text-third">
@@ -198,23 +200,24 @@
             </h1>
             <form action="" method="post" class="flex flex-col items-center">
                 <div class="md:flex gap-3.5 w-full">
-                    <input type="text" placeholder="姓名 /  稱謂" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
-                    <input type="text" placeholder="店家 / 公司行號" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
-                    <input type="text" placeholder="行業別" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="姓名 /  稱謂" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="店家 / 公司行號" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="行業別" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
                 </div>
                 <div class="md:flex gap-3.5 w-full">
-                    <input type="text" placeholder="聯絡電話" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
-                    <input type="text" placeholder="Email" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
-                    <input type="text" placeholder="所在區域" class="w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="聯絡電話" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="Email" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="所在區域" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
                 </div>
 
-                <textarea placeholder="寫下您的留言" class="w-full bg-gray-100 py-5 px-7 mb-12 h-44"></textarea>
+                <textarea placeholder="寫下您的留言" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-12 h-44"></textarea>
                 <button type="button" class="bg-main text-white font-medium w-20 h-10"><span>送出</span></button>
             </form>
         </section>
 
+
         <!-- 頁尾 -->
-        <footer class="px-10 py-14 bg-third text-white md:px-60">
+        <footer class="px-10 py-14 bg-third text-white lg:px-60 md:px-32">
             <div class="flex ">
                 <div class="flex flex-col md:flex-row gap-10 md:w-3/4">
                     <div class="md:w-1/3">
@@ -242,49 +245,70 @@
                         </div>
                     </div>
                 </div>
-                <div class="pl-14 flex flex-col justify-end md:w-1/4 md:justify-start">
-                    <h2 class="text-lg MW-font font-bold ">Media</h2>
-                    <div class="mt-2.5 md:mt-4 flex gap-3.5">
-                        <a>
-                            <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 70 69.574">
-                                <path id="路径_3" data-name="路径 3"
-                                    d="M2797.491,9010.364a35,35,0,0,0-5.468,69.574v-24.457h-8.887v-10.117h8.887v-7.711c0-8.772,5.225-13.617,13.219-13.617a53.89,53.89,0,0,1,7.835.683v8.614h-4.413c-4.348,0-5.7,2.7-5.7,5.465v6.566h9.707l-1.552,10.117h-8.155v24.457a35,35,0,0,0-5.469-69.574Z"
-                                    transform="translate(-2762.491 -9010.364)" fill="#6ca27f" />
+                <div class="w-full py-14pl-14 flex flex-col justify-between md:w-1/4 md:justify-start">
+                    <transition name="custom-classes-transition" enter-active-class="animate__fadeInUp"
+                        leave-active-class="animate__fadeOutDown">
+                        <div v-if="scroll_top_offset" v-on:click="toTop()" ref="scroll-top-button"
+                            class="animate__animated cursor-pointer fixed md:fixed ml-auto right-10 bottom-10 bg-third shadow w-12 h-12 px-2  rounded-xl">
+                            <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7">
+                                </path>
                             </svg>
-
-                        </a>
-                        <a>
-                            <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
-                                <g id="组_15" data-name="组 15" transform="translate(-2858.68 -9010.364)">
-                                    <path id="路径_4" data-name="路径 4"
-                                        d="M2893.68,9038.018a7.346,7.346,0,1,0,7.346,7.347A7.345,7.345,0,0,0,2893.68,9038.018Z"
-                                        fill="#fff" />
-                                    <path id="路径_5" data-name="路径 5"
-                                        d="M2910.859,9032.367a7.3,7.3,0,0,0-4.182-4.183,12.206,12.206,0,0,0-4.092-.759c-2.324-.105-3.021-.129-8.905-.129s-6.581.023-8.905.129a12.214,12.214,0,0,0-4.092.759,7.3,7.3,0,0,0-4.182,4.183,12.182,12.182,0,0,0-.759,4.092c-.106,2.324-.128,3.021-.128,8.905s.022,6.581.128,8.9a12.2,12.2,0,0,0,.759,4.093,7.3,7.3,0,0,0,4.182,4.182,12.17,12.17,0,0,0,4.092.758c2.324.106,3.021.129,8.905.129s6.582-.022,8.905-.129a12.162,12.162,0,0,0,4.092-.758,7.3,7.3,0,0,0,4.182-4.182,12.189,12.189,0,0,0,.759-4.093c.106-2.323.129-3.021.129-8.9s-.023-6.581-.129-8.905A12.176,12.176,0,0,0,2910.859,9032.367Zm-17.179,24.313A11.316,11.316,0,1,1,2905,9045.364,11.315,11.315,0,0,1,2893.68,9056.68Zm11.764-20.435a2.645,2.645,0,1,1,2.644-2.646A2.645,2.645,0,0,1,2905.444,9036.245Z"
-                                        fill="#fff" />
-                                    <path id="路径_6" data-name="路径 6"
-                                        d="M2893.68,9010.364a35,35,0,1,0,35,35A35,35,0,0,0,2893.68,9010.364Zm21.905,44.086a16.16,16.16,0,0,1-1.025,5.349,11.271,11.271,0,0,1-6.445,6.445,16.149,16.149,0,0,1-5.349,1.023c-2.35.108-3.1.134-9.086.134s-6.735-.025-9.086-.134a16.16,16.16,0,0,1-5.349-1.023,11.271,11.271,0,0,1-6.445-6.445,16.162,16.162,0,0,1-1.024-5.349c-.107-2.352-.133-3.1-.133-9.086s.026-6.735.133-9.086a16.169,16.169,0,0,1,1.024-5.35,11.273,11.273,0,0,1,6.445-6.444,16.182,16.182,0,0,1,5.349-1.024c2.351-.108,3.1-.133,9.086-.133s6.736.024,9.086.133a16.172,16.172,0,0,1,5.349,1.024,11.273,11.273,0,0,1,6.445,6.444,16.166,16.166,0,0,1,1.025,5.35c.107,2.351.132,3.1.132,9.086S2915.692,9052.1,2915.585,9054.45Z"
-                                        fill="#fff" />
-                                </g>
-                            </svg>
+                        </div>
+                    </transition>
 
 
-                        </a>
-                        <a>
-                            <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
-                                <g id="组_16" data-name="组 16" transform="translate(-2954.869 -9010.364)">
-                                    <path id="路径_7" data-name="路径 7" d="M2985.2,9052.364l12.124-7-12.124-7Z"
-                                        fill="#fff" />
-                                    <path id="路径_8" data-name="路径 8"
-                                        d="M2989.869,9010.364a35,35,0,1,0,35,35A35,35,0,0,0,2989.869,9010.364Zm22.358,46.231a5.845,5.845,0,0,1-4.125,4.126c-3.64.977-18.233.977-18.233.977s-14.593,0-18.232-.977a5.846,5.846,0,0,1-4.126-4.126c-.975-3.639-.975-11.231-.975-11.231s0-7.593.975-11.232a5.846,5.846,0,0,1,4.126-4.126c3.639-.976,18.232-.976,18.232-.976s14.593,0,18.233.976a5.845,5.845,0,0,1,4.125,4.126c.976,3.64.976,11.232.976,11.232S3013.2,9052.957,3012.227,9056.6Z"
-                                        fill="#fff" />
-                                    <path id="路径_9" data-name="路径 9" d="M2985.2,9052.364v-14l12.123,7Z" fill="#fff" />
-                                </g>
-                            </svg>
+                    <div></div>
+                    <div class="md:ml-5 lg:ml-0">
 
-                        </a>
+                        <h2 class="text-lg MW-font font-bold ">Media</h2>
+                        <div class="mt-2.5 md:mt-4 flex gap-3.5">
+                            <a>
+                                <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 70 69.574">
+                                    <path id="路径_3" data-name="路径 3"
+                                        d="M2797.491,9010.364a35,35,0,0,0-5.468,69.574v-24.457h-8.887v-10.117h8.887v-7.711c0-8.772,5.225-13.617,13.219-13.617a53.89,53.89,0,0,1,7.835.683v8.614h-4.413c-4.348,0-5.7,2.7-5.7,5.465v6.566h9.707l-1.552,10.117h-8.155v24.457a35,35,0,0,0-5.469-69.574Z"
+                                        transform="translate(-2762.491 -9010.364)" fill="#6ca27f" />
+                                </svg>
+
+                            </a>
+                            <a>
+                                <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 70 70">
+                                    <g id="组_15" data-name="组 15" transform="translate(-2858.68 -9010.364)">
+                                        <path id="路径_4" data-name="路径 4"
+                                            d="M2893.68,9038.018a7.346,7.346,0,1,0,7.346,7.347A7.345,7.345,0,0,0,2893.68,9038.018Z"
+                                            fill="#fff" />
+                                        <path id="路径_5" data-name="路径 5"
+                                            d="M2910.859,9032.367a7.3,7.3,0,0,0-4.182-4.183,12.206,12.206,0,0,0-4.092-.759c-2.324-.105-3.021-.129-8.905-.129s-6.581.023-8.905.129a12.214,12.214,0,0,0-4.092.759,7.3,7.3,0,0,0-4.182,4.183,12.182,12.182,0,0,0-.759,4.092c-.106,2.324-.128,3.021-.128,8.905s.022,6.581.128,8.9a12.2,12.2,0,0,0,.759,4.093,7.3,7.3,0,0,0,4.182,4.182,12.17,12.17,0,0,0,4.092.758c2.324.106,3.021.129,8.905.129s6.582-.022,8.905-.129a12.162,12.162,0,0,0,4.092-.758,7.3,7.3,0,0,0,4.182-4.182,12.189,12.189,0,0,0,.759-4.093c.106-2.323.129-3.021.129-8.9s-.023-6.581-.129-8.905A12.176,12.176,0,0,0,2910.859,9032.367Zm-17.179,24.313A11.316,11.316,0,1,1,2905,9045.364,11.315,11.315,0,0,1,2893.68,9056.68Zm11.764-20.435a2.645,2.645,0,1,1,2.644-2.646A2.645,2.645,0,0,1,2905.444,9036.245Z"
+                                            fill="#fff" />
+                                        <path id="路径_6" data-name="路径 6"
+                                            d="M2893.68,9010.364a35,35,0,1,0,35,35A35,35,0,0,0,2893.68,9010.364Zm21.905,44.086a16.16,16.16,0,0,1-1.025,5.349,11.271,11.271,0,0,1-6.445,6.445,16.149,16.149,0,0,1-5.349,1.023c-2.35.108-3.1.134-9.086.134s-6.735-.025-9.086-.134a16.16,16.16,0,0,1-5.349-1.023,11.271,11.271,0,0,1-6.445-6.445,16.162,16.162,0,0,1-1.024-5.349c-.107-2.352-.133-3.1-.133-9.086s.026-6.735.133-9.086a16.169,16.169,0,0,1,1.024-5.35,11.273,11.273,0,0,1,6.445-6.444,16.182,16.182,0,0,1,5.349-1.024c2.351-.108,3.1-.133,9.086-.133s6.736.024,9.086.133a16.172,16.172,0,0,1,5.349,1.024,11.273,11.273,0,0,1,6.445,6.444,16.166,16.166,0,0,1,1.025,5.35c.107,2.351.132,3.1.132,9.086S2915.692,9052.1,2915.585,9054.45Z"
+                                            fill="#fff" />
+                                    </g>
+                                </svg>
+
+
+                            </a>
+                            <a>
+                                <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 70 70">
+                                    <g id="组_16" data-name="组 16" transform="translate(-2954.869 -9010.364)">
+                                        <path id="路径_7" data-name="路径 7" d="M2985.2,9052.364l12.124-7-12.124-7Z"
+                                            fill="#fff" />
+                                        <path id="路径_8" data-name="路径 8"
+                                            d="M2989.869,9010.364a35,35,0,1,0,35,35A35,35,0,0,0,2989.869,9010.364Zm22.358,46.231a5.845,5.845,0,0,1-4.125,4.126c-3.64.977-18.233.977-18.233.977s-14.593,0-18.232-.977a5.846,5.846,0,0,1-4.126-4.126c-.975-3.639-.975-11.231-.975-11.231s0-7.593.975-11.232a5.846,5.846,0,0,1,4.126-4.126c3.639-.976,18.232-.976,18.232-.976s14.593,0,18.233.976a5.845,5.845,0,0,1,4.125,4.126c.976,3.64.976,11.232.976,11.232S3013.2,9052.957,3012.227,9056.6Z"
+                                            fill="#fff" />
+                                        <path id="路径_9" data-name="路径 9" d="M2985.2,9052.364v-14l12.123,7Z"
+                                            fill="#fff" />
+                                    </g>
+                                </svg>
+
+                            </a>
+                        </div>
                     </div>
+
                 </div>
             </div>
             <div class="md:hidden mt-9 text-gray-400 text-xs">
@@ -292,7 +316,7 @@
             </div>
         </footer>
     </div>
-    <script src="js/home.js"></script>
+    <script src="js/home.js?v=202112041622"></script>
 </body>
 
 </html>

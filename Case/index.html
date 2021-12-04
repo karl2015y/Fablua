@@ -1,0 +1,570 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- ... -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/Asset/css/style.css?v=202112041622" rel="stylesheet">
+    <link href="css/case.css?v=202112041622" rel="stylesheet">
+    <script src="/Asset/js/index.js?v=202112041622"></script>
+
+    <script src="https://unpkg.com/spacingjs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://unpkg.com/vue-agile"></script>
+
+
+    <!-- https://fonts.google.com/noto/specimen/Noto+Sans+TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script src="/Asset/js/plugin/vue-smooth-scroll.min.js"></script>
+
+
+</head>
+
+<body>
+    <!-- <div class="xl:" style="position: fixed;top: 0;left: 0;width: 100vw;height: 5354px;background-image: url(https://upload.cc/i1/2021/11/30/JIrngt.jpg);z-index: 100;opacity: 1;background-size: contain;"></div> -->
+    <!-- <div style="background-size: contain;position: fixed;top: 0;left: 0;width: 440px;height: 5354px;background-image: url(/zdesign/home/Fablua-Layout-1-Mobile.jpg);z-index: 100;opacity: 0.7;"></div> -->
+    <div id="app" class="">
+        <!-- 頁首 -->
+        <header
+            class="top-0 bg-white z-10 shadow sticky flex justify-between items-center h-16 md:h-32 px-10 md:px-14 lg:px-56">
+            <div class="MW-font font-bold text-main text-3xl ">Fabula</div>
+            <!-- menu 按鈕 -->
+            <div>
+                <div v-on:click="menu_open=!menu_open" :class="menu_open?'items-start':'items-end'"
+                    class="md:hidden w-7 h-5 flex flex-col justify-between overflow-hidden">
+                    <div :class="{'animate__slideInLeft':menu_open, 'animate__slideInRight':!menu_open}"
+                        class="animate__animated animate__faster bg-third w-full h-1 rounded-full transform transition-transform	">
+                    </div>
+                    <div :class="{'w-3/4 ':!menu_open}"
+                        class="bg-third w-1/2 h-1 rounded-full transform  transition-all duration-700">
+                    </div>
+                    <div :class="{'w-3/4':menu_open}"
+                        class="bg-third w-1/2 h-1 rounded-full transform transition-all duration-300">
+                    </div>
+                </div>
+                <div v-on:click="menu_open=!menu_open" :class="{'w-full':menu_open}"
+                    class="fixed h-screen right-0 md:h-auto md:static md:w-full md:w-auto top-16 transition-all ease-in-out duration-500 w-0">
+
+                    <ul
+                        class="overflow-hidden md:bg-transparent bg-gray-50 flex flex-col lg:gap-14 md:gap-5 h-screen md:flex-row md:h-auto md:shadow-none md:w-auto ml-auto shadow-2xl text-center w-1/2">
+                        <li
+                            class="md:shadow-none shadow-inner h-16 flex items-center justify-center border-b md:border-0">
+                            關於我們</li>
+                        <li
+                            class="h-16 flex items-center justify-center border-b md:border-0 bg-sec text-white md:bg-transparent md:text-sec">
+                            精選故事</li>
+                        <li class="h-16 flex items-center justify-center border-b md:border-0">商企招募</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </header>
+
+        <!-- 字在右邊的滿版大圖 -->
+        <section>
+            <div class="w-full relative">
+                <img class="hero-img" src="img/1.jpeg" alt="">
+                <div
+                    class="w-80 md:w-5/12  absolute bottom-16 right-0 bg-black bg-opacity-50 px-10 py-7 md:px-12 lg:px-0 lg:pl-16 lg:pr-28 md:py-11">
+                    <span class="text-xl md:text-2xl font-medium text-white">
+                        內文重點示範文字 ， 字數限制如敘述內可容納之...
+                    </span>
+                </div>
+            </div>
+        </section>
+        <!-- 內文-->
+        <div class="md:flex gap-9  px-10 md:px-14 lg:px-56">
+            <div class="w-full md:w-2/3 ">
+                <!-- 文章示範標題 -->
+                <section class="relative py-8 md:py-20 md:border-b border-gray-500">
+                    <h1 class="mt-3 text-2xl text-main font-bold md:mt-0">文章示範標題</h1>
+                    <div class="mt-1.5 text-gray-400 md:mt-6">2021 / 11 / 28 Sun.</div>
+                    <div>
+                        <p class="my-8 md:mt-10 md:mb-6">A paragraph is a series of sentences that are organized and
+                            coherent, and are all related to a single topic. Almost every piece of writing you do that
+                            is longer than a few sentences should be organized into paragraphs.</p>
+                        <img class="w-full h-44 md:h-80 object-center object-cover" src="img/1.jpeg" alt="">
+                        <p class="my-7 md:mt-9 md:mb-0">A paragraph is a series of sentences that are organized and
+                            coherent, and are all related to a single topic. Almost every piece of writing you do that
+                            is longer than a few sentences should be organized into paragraphs.</p>
+                    </div>
+                    <div class="flex gap-4 py-1.5 md:absolute -right-2 top-14">
+                        <a>
+                            <svg class="w-9 h-9 md:w-8 md:h-8 p-1.5 shadow hover:bg-third"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.264 41.663">
+                                <path id="路径_12" data-name="路径 12"
+                                    d="M2278.752,2144.177c.022.451.031.9.031,1.36,0,13.9-10.58,29.925-29.925,29.925a29.777,29.777,0,0,1-16.122-4.724,21.652,21.652,0,0,0,2.508.145,21.106,21.106,0,0,0,13.063-4.5,10.53,10.53,0,0,1-9.825-7.306,10.513,10.513,0,0,0,4.75-.179,10.525,10.525,0,0,1-8.439-10.312c0-.045,0-.09,0-.135a10.412,10.412,0,0,0,4.764,1.316,10.524,10.524,0,0,1-3.257-14.04,29.865,29.865,0,0,0,21.679,10.989,10.524,10.524,0,0,1,17.924-9.592,21.053,21.053,0,0,0,6.677-2.553,10.555,10.555,0,0,1-4.624,5.818,21,21,0,0,0,6.04-1.656A21.362,21.362,0,0,1,2278.752,2144.177Z"
+                                    transform="translate(-2232.736 -2133.799)" fill="#e6e6e6" />
+                            </svg>
+
+
+
+                        </a>
+                        <a>
+                            <svg class="w-9 h-9 md:w-8 md:h-8 p-1.5 shadow hover:bg-third"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.879 51.761">
+                                <path id="路径_13" data-name="路径 13"
+                                    d="M2377.088,2136.582l-4.872,0c-3.82,0-4.56,1.816-4.56,4.48v5.874h9.112l-1.187,9.2h-7.925v23.609h-9.5v-23.609h-7.945v-9.2h7.945v-6.785c0-7.875,4.81-12.164,11.835-12.164a65.076,65.076,0,0,1,7.1.363Z"
+                                    transform="translate(-2350.209 -2127.99)" fill="#e6e6e6" />
+                            </svg>
+
+                        </a>
+                        <a>
+                            <svg class="w-9 h-9 md:w-8 md:h-8 p-1.5 shadow hover:bg-third"
+                                xmlns="http://www.w3.org/2000/svg" width="42.72" height="52.638"
+                                viewBox="0 0 42.72 52.638">
+                                <path id="路径_14" data-name="路径 14"
+                                    d="M2473.269,2168.109c-3.388,0-6.575-1.761-7.665-3.84,0,0-1.678,6.387-2.084,7.951a33.8,33.8,0,0,1-3.45,7.589,1.671,1.671,0,0,1-3.1-.693,29.524,29.524,0,0,1,.224-8.531c.607-2.611,3.921-16.626,3.921-16.626a12.062,12.062,0,0,1-1-4.966c0-4.649,2.7-8.122,6.052-8.122,2.853,0,4.232,2.143,4.232,4.713,0,2.868-1.828,7.158-2.769,11.136a4.854,4.854,0,0,0,4.952,6.042c5.945,0,10.514-6.268,10.514-15.315,0-8.008-5.753-13.608-13.972-13.608-9.515,0-15.1,7.138-15.1,14.517a13.019,13.019,0,0,0,2.488,7.632.993.993,0,0,1,.231.958c-.252,1.056-.817,3.329-.928,3.794-.146.611-.484.74-1.117.447-4.177-1.946-6.792-8.052-6.792-12.958,0-10.549,7.667-20.239,22.1-20.239,11.6,0,20.619,8.268,20.619,19.316C2490.625,2158.835,2483.357,2168.109,2473.269,2168.109Z"
+                                    transform="translate(-2447.905 -2127.99)" fill="#e6e6e6" fill-rule="evenodd" />
+                            </svg>
+
+
+                        </a>
+                        <a>
+                            <svg class="w-9 h-9 md:w-8 md:h-8 p-1.5 shadow hover:bg-third"
+                                xmlns="http://www.w3.org/2000/svg" width="43.504" height="43.431"
+                                viewBox="0 0 43.504 43.431">
+                                <rect id="矩形_33" data-name="矩形 33" width="9.025" height="29.008"
+                                    transform="translate(0.716 14.423)" fill="#e6e6e6" />
+                                <path id="路径_16" data-name="路径 16"
+                                    d="M2557.8,2140.214a5.228,5.228,0,1,1,5.225-5.23A5.226,5.226,0,0,1,2557.8,2140.214Z"
+                                    transform="translate(-2552.567 -2129.758)" fill="#e6e6e6" />
+                                <path id="路径_17" data-name="路径 17"
+                                    d="M2596.071,2173.189h-9.006v-14.1c0-3.365-.065-7.694-4.687-7.694-4.691,0-5.407,3.665-5.407,7.449v14.35h-9v-29.008h8.643v3.963h.122a9.474,9.474,0,0,1,8.532-4.686c9.122,0,10.808,6.006,10.808,13.82Z"
+                                    transform="translate(-2552.567 -2129.758)" fill="#e6e6e6" />
+                            </svg>
+
+                        </a>
+                    </div>
+                </section>
+                <!-- 手機 300X250 廣告 -->
+                <section class="md:hidden py-8 bg-gray-50 -ml-10 w-screen">
+                    <div class="h-72 m-auto w-96 bg-gray-200">
+                        <div class="w-full h-full text-white flex justify-center items-center text-3xl">Ads</div>
+                    </div>
+                </section>
+                <!-- ＯＯ企業有限公司 -->
+                <section ref="company_menu" class="pt-14">
+                    <div class="flex justify-between md:justify-start md:gap-6">
+                        <div class="w-28 h-28 md:w-40 md:h-40">
+                            <img class="w-full h-full object-center object-cover" src="img/1.jpeg" alt="">
+                        </div>
+                        <div class="w-64 md:w-72 lg:w-96 flex flex-col justify-between md:justify-around">
+                            <h1 class="text-2xl text-main font-bold">ＯＯ企業有限公司</h1>
+                            <div class="text-gray-400 pb-3.5 md:pb-0">企業英文名 / 其他相關簡要之附註資訊...</div>
+                            <ul class="bg-white md:flex hidden mt-7 w-full justify-between">
+                                <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                                    :class="{'md:border-b-4 border-b-2 border-sec':company_menu_current=='公司簡介'}">
+                                    <div v-on:click="scroll2View('公司簡介')">公司簡介</div>
+                                </li>
+                                <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                                    :class="{'md:border-b-4 border-b-2 border-sec':company_menu_current=='基本資訊'}">
+                                    <div v-on:click="scroll2View('基本資訊')">基本資訊</div>
+                                </li>
+                                <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                                    :class="{'md:border-b-4 border-b-2 border-sec':company_menu_current=='企業特色'}">
+                                    <div v-on:click="scroll2View('企業特色')">企業特色</div>
+                                </li>
+                                <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                                    :class="{'md:border-b-4 border-b-2 border-sec':company_menu_current=='地圖導覽'}">
+                                    <div v-on:click="scroll2View('地圖導覽')">地圖導覽</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="bg-white flex md:hidden mt-7 w-full justify-between">
+                        <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                            :class="{'border-b-2 border-sec':company_menu_current=='公司簡介'}">
+                            <div v-on:click="scroll2View('公司簡介', true)">公司簡介</div>
+                        </li>
+                        <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                            :class="{'border-b-2 border-sec':company_menu_current=='基本資訊'}">
+                            <div v-on:click="scroll2View('基本資訊', true)">基本資訊</div>
+                        </li>
+                        <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                            :class="{'border-b-2 border-sec':company_menu_current=='企業特色'}">
+                            <div v-on:click="scroll2View('企業特色', true)">企業特色</div>
+                        </li>
+                        <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                            :class="{'border-b-2 border-sec':company_menu_current=='地圖導覽'}">
+                            <div v-on:click="scroll2View('地圖導覽', true)">地圖導覽</div>
+                        </li>
+                    </ul>
+                </section>
+                <!-- 公司簡介 -->
+                <section ref="公司簡介" class="pt-10 md:pt-14">
+                    <h2 class="mb-7 md:mb-9 pl-2 border-l-2 md:border-l-4 ">公司簡介</h2>
+                    <p>
+                        A paragraph is a series of sentences that are organized and coherent, and are all related to a
+                        single topic. Almost every piece of writing you do that is longer than a few sentences should be
+                        organized into paragraphs.
+                    </p>
+                </section>
+                <!-- 基本資訊 -->
+                <section ref="基本資訊" class="pt-10 md:pt-14">
+                    <h2 class="mb-7 md:mb-9 pl-2 border-l-2 md:border-l-4 ">基本資訊</h2>
+
+                    <div class="flex gap-5 mb-3.5">
+                        <div class="w-16 whitespace-nowrap">成立時間</div>
+                        <div class="w-auto text-gray-400">2002 年</div>
+                    </div>
+                    <div class="flex gap-5 mb-3.5">
+                        <div class="w-16 whitespace-nowrap">產業類別</div>
+                        <div class="w-auto text-gray-400">電子科技業</div>
+                    </div>
+                    <div class="flex gap-5 mb-3.5">
+                        <div class="w-16 whitespace-nowrap">服務項目</div>
+                        <div class="w-auto text-gray-400">程式設計 、 晶片硬體設備</div>
+                    </div>
+                    <div class="flex gap-5 mb-3.5">
+                        <div class="w-16 whitespace-nowrap">人事聯絡</div>
+                        <div class="w-auto text-gray-400">高先生</div>
+                    </div>
+                    <div class="flex gap-5 mb-3.5">
+                        <div class="w-16 whitespace-nowrap">聯絡電話</div>
+                        <div class="w-auto text-blue-500"><a rel="nofollow" href="tel:0412345678">04-1234-5678</a></div>
+                    </div>
+                    <div class="flex gap-5 mb-3.5">
+                        <div class="w-16 whitespace-nowrap">聯絡地址</div>
+                        <div class="w-auto text-gray-400">台中市西區台灣大道二段 OO 號 O 樓 A 室假設內容太長請自動換行之</div>
+                    </div>
+                    <div class="flex gap-5 mb-3.5">
+                        <div class="w-16 whitespace-nowrap">電子信箱</div>
+                        <div class="w-auto text-blue-500"><a rel="nofollow"
+                                href="mailto:techservice@company.com">techservice@company.com</a></div>
+                    </div>
+                    <div class="flex gap-5 mb-3.5">
+                        <div class="w-16 whitespace-nowrap">官方網址</div>
+                        <div class="w-auto text-blue-500"><a rel="nofollow"
+                                href="https://www.service.com.tw">www.service.com.tw</a></div>
+                    </div>
+
+
+
+                </section>
+                <!-- 企業特色 -->
+                <section ref="企業特色" class="pt-10 md:pt-14">
+                    <h2 class="mb-7 md:mb-9 pl-2 border-l-2 md:border-l-4 ">企業特色</h2>
+                    <div class="flex w-11/12 gap-4 flex-wrap">
+                        <a href="#台中">
+                            <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                台中
+                            </div>
+                        </a>
+                        <a href="#電子業">
+                            <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                電子業
+                            </div>
+                        </a>
+                        <a href="#科技業">
+                            <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                科技業
+                            </div>
+                        </a>
+                        <a href="#在地商家">
+                            <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                在地商家
+                            </div>
+                        </a>
+                        <a href="#新創企業">
+                            <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                新創企業
+                            </div>
+                        </a>
+                    </div>
+                </section>
+                <!-- 地圖導覽 -->
+                <section ref="地圖導覽" class="pt-10 pb-7 border-b md:pt-14 md:pb-20 md:border-b-2">
+                    <h2 class="mb-7 md:mb-9 pl-2 border-l-2 md:border-l-4 ">地圖導覽</h2>
+                    <div class="w-full h-64 md:h-80">
+                        <iframe class="w-full h-full"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14460.031820041626!2d121.5645561!3d25.0338041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xacc4d11dc963103c!2z5Y-w5YyXMTAx!5e0!3m2!1szh-TW!2stw!4v1638585072870!5m2!1szh-TW!2stw"
+                            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+
+                </section>
+                <!-- 作者 -->
+                <section class="pt-7 md:py-12 md:border-b-2">
+                    <div class="flex gap-7">
+                        <div class="w-20 h-20">
+                            <img class="rounded-full w-full h-full object-center object-cover" src="img/1.jpeg" alt="">
+                        </div>
+                        <div class="pt-4 md:pt-2.5 text-gray-600">
+                            <div class="text-sm ">編輯者</div>
+                            <h1 class="MW-font text-xl font-bold inline mr-3">Christina Lee</h1>
+                            <h1 class="text-xl font-medium inline">李克莉</h1>
+                        </div>
+                    </div>
+                    <p class="pt-7 pb-14 md:ml-20 md:pl-7 md:pb-0 md:pt-0 md:mt-3">
+                        A paragraph is a series of sentences that are organized and coherent, and are all related to a
+                        single topic. Almost every piece of writing you do that is longer than a few sentences should be
+                        organized into paragraphs.
+                    </p>
+                </section>
+                <!-- 手機 廣告 -->
+                <section class="md:hidden py-14 bg-gray-50 -ml-10 w-screen">
+                    <div style="height: 113vw;" class=" m-auto w-96 bg-gray-200 mb-7">
+                        <div class="w-full h-full text-white flex justify-center items-center text-3xl">Ads</div>
+                    </div>
+                    <div class="h-36 m-auto w-96 bg-gray-200">
+                        <div class="w-full h-full text-white flex justify-center items-center text-3xl">Ads</div>
+                    </div>
+                </section>
+                <!-- 更多相關文章 ... -->
+                <section class="py-7">
+                    <div class="text-sm text-gray-400 mb-9">更多相關文章 ...</div>
+                    <div class="flex flex-col md:flex-row md:gap-20 md:mb-7">
+                        <div v-for="i in 2"
+                            class="flex gap-5 md:gap-3 mb-7 md:mb-0 md:pb-4 md:flex-col md:w-80 hover:shadow-2xl">
+                            <div class="w-36 h-24 md:w-full lg:h-60 md:h-36" style="min-width: 8.5rem;">
+                                <img class="w-full h-full object-center object-cover" src="img/1.jpeg" alt="">
+                            </div>
+                            <div class="md:px-3 lg:px-6">
+                                <h1 class="mb-3.5 text-main text-lg">文章示範標題</h1>
+                                <p>內文重點示範文字 ， 字數限制如敘述內可容納之...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <div class="w-full md:w-1/3 bg-gray-50  -ml-10 w-screen md:ml-0 md:w-auto px-12 md:px-4 lg:px-8">
+                <!-- Latest Post -->
+                <section class="pt-16 md:pt-20">
+                    <h1>Latest Post</h1>
+                    <div class="border-t border-gray-500 md:pt-5 mt-4 pt-7">
+                        <ul class="flex flex-col gap-3 md:gap-4 text-third">
+                            <li>
+                                <a class="visited:text-gray-500 hover:text-sec">文章示範標題(一)</a>
+                            </li>
+                            <li>
+                                <a class="visited:text-gray-500 hover:text-sec">文章示範標題(二)</a>
+                            </li>
+                            <li>
+                                <a class="visited:text-gray-500 hover:text-sec">文章示範標題(三)</a>
+                            </li>
+                            <li>
+                                <a class="visited:text-gray-500 hover:text-sec">文章示範標題(四)</a>
+                            </li>
+                            <li>
+                                <a class="visited:text-gray-500 hover:text-sec">文章示範標題(五)</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- 電腦 廣告 -->
+                <section class="hidden md:block ">
+                    <div class="pt-6 w-full h-52">
+                        <div class=" bg-gray-200 w-full h-full text-white flex justify-center items-center text-3xl">Ads
+                        </div>
+                    </div>
+                    <div class="pt-6 w-full" style="height: 31.25vw;">
+                        <div class="bg-gray-200 w-full h-full text-white flex justify-center items-center text-3xl">Ads
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tags -->
+                <section class="pt-14 md:pt-6">
+                    <h1>Tags</h1>
+                    <div class="border-t border-gray-500 md:pt-5 mt-4 pt-7">
+                        <div class="flex w-full gap-4 flex-wrap">
+                            <a href="#台中">
+                                <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                    台中
+                                </div>
+                            </a>
+                            <a href="#台北">
+                                <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                    台北
+                                </div>
+                            </a>
+                            <a href="#電子業">
+                                <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                    電子業
+                                </div>
+                            </a>
+                            <a href="#科技業">
+                                <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                    科技業
+                                </div>
+                            </a>
+                            <a href="#在地商家">
+                                <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                    在地商家
+                                </div>
+                            </a>
+                            <a href="#新創企業">
+                                <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
+                                    新創企業
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- 電腦 廣告 -->
+                <section class="hidden md:block ">
+                    <div class="pt-6 w-full h-60">
+                        <div class=" bg-gray-200 w-full h-full text-white flex justify-center items-center text-3xl">Ads
+                        </div>
+                    </div>
+                    <div class="pt-6 w-full h-28">
+                        <div class="bg-gray-200 w-full h-full text-white flex justify-center items-center text-3xl">Ads
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 手機 廣告 -->
+                <section class="md:hidden pt-14 bg-gray-50 -ml-10 w-screen">
+                    <div class="h-72 m-auto w-96 bg-gray-200 ">
+                        <div class="w-full h-full text-white flex justify-center items-center text-3xl">Ads</div>
+                    </div>
+
+                </section>
+                <!-- Links -->
+                <section class="pt-16 md:pt-6">
+                    <h1>Links</h1>
+                    <div class="border-t border-gray-500 md:pt-5 mt-4 pt-7">
+                        <ul class="flex flex-col gap-3 md:gap-4 text-third">
+                            <li>
+                                <a class="visited:text-gray-500 hover:text-sec">友站連結</a>
+                            </li>
+                            <li>
+                                <a class="visited:text-gray-500 hover:text-sec">友站連結</a>
+                            </li>
+                            <li>
+                                <a class="visited:text-gray-500 hover:text-sec">友站連結</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- 電腦 450X300 廣告 -->
+                <section class="hidden md:block ">
+                    <div class="pt-6 w-full h-44">
+                        <div class=" bg-gray-200 w-full h-full text-white flex justify-center items-center text-3xl">Ads
+                        </div>
+                    </div>
+
+                </section>
+                <!-- 累計瀏覽人次 -->
+                <section>
+                    <div class="flex my-16 md:mt-8">
+                        <div class="flex whitespace-nowrap md:text-xs lg:text-base">累計瀏覽人次
+                            <div class="text-sec ml-14 lg:ml-6 md:ml-3 mr-3">199268</div> 次
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- 頁尾 -->
+        <footer class="px-10 py-14 bg-third text-white lg:px-60 md:px-32">
+            <div class="flex ">
+                <div class="flex flex-col md:flex-row gap-10 md:w-3/4">
+                    <div class="md:w-1/3">
+                        <h1 class="text-2xl MW-font font-bold ">Fabula</h1>
+                        <span class="hidden md:block mt-1.5 text-gray-400 text-xs">
+                            Copyright © 2021 Fabula.<br>
+                            All rights reserved.
+                        </span>
+                    </div>
+                    <div class="md:w-1/3">
+                        <h2 class="text-lg MW-font font-bold "><span>Contact</span></h2>
+                        <div class="mt-3 md:mt-4 text-sm">
+                            <span>OOOOOO有限公司</span><br>
+                            <a>+886 1234 5678</a><br>
+                            <a>service@company.com</a>
+
+                        </div>
+                    </div>
+                    <div class="md:w-1/3">
+                        <h2 class="text-lg MW-font font-bold">Terms</h2>
+                        <div class="mt-3 md:mt-4 text-sm">
+                            <a>隱私權政策</a><br>
+                            <a>注意事項</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full py-14pl-14 flex flex-col justify-between md:w-1/4 md:justify-start">
+                    <transition name="custom-classes-transition" enter-active-class="animate__fadeInUp"
+                        leave-active-class="animate__fadeOutDown">
+                        <div v-if="scroll_top_offset" v-on:click="toTop()" ref="scroll-top-button"
+                            class="animate__animated cursor-pointer fixed md:fixed ml-auto right-10 bottom-10 bg-third shadow w-12 h-12 px-2  rounded-xl">
+                            <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7">
+                                </path>
+                            </svg>
+                        </div>
+                    </transition>
+
+
+                    <div></div>
+                    <div class="md:ml-5 lg:ml-0">
+
+                        <h2 class="text-lg MW-font font-bold ">Media</h2>
+                        <div class="mt-2.5 md:mt-4 flex gap-3.5">
+                            <a>
+                                <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 70 69.574">
+                                    <path id="路径_3" data-name="路径 3"
+                                        d="M2797.491,9010.364a35,35,0,0,0-5.468,69.574v-24.457h-8.887v-10.117h8.887v-7.711c0-8.772,5.225-13.617,13.219-13.617a53.89,53.89,0,0,1,7.835.683v8.614h-4.413c-4.348,0-5.7,2.7-5.7,5.465v6.566h9.707l-1.552,10.117h-8.155v24.457a35,35,0,0,0-5.469-69.574Z"
+                                        transform="translate(-2762.491 -9010.364)" fill="#6ca27f" />
+                                </svg>
+
+                            </a>
+                            <a>
+                                <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 70 70">
+                                    <g id="组_15" data-name="组 15" transform="translate(-2858.68 -9010.364)">
+                                        <path id="路径_4" data-name="路径 4"
+                                            d="M2893.68,9038.018a7.346,7.346,0,1,0,7.346,7.347A7.345,7.345,0,0,0,2893.68,9038.018Z"
+                                            fill="#fff" />
+                                        <path id="路径_5" data-name="路径 5"
+                                            d="M2910.859,9032.367a7.3,7.3,0,0,0-4.182-4.183,12.206,12.206,0,0,0-4.092-.759c-2.324-.105-3.021-.129-8.905-.129s-6.581.023-8.905.129a12.214,12.214,0,0,0-4.092.759,7.3,7.3,0,0,0-4.182,4.183,12.182,12.182,0,0,0-.759,4.092c-.106,2.324-.128,3.021-.128,8.905s.022,6.581.128,8.9a12.2,12.2,0,0,0,.759,4.093,7.3,7.3,0,0,0,4.182,4.182,12.17,12.17,0,0,0,4.092.758c2.324.106,3.021.129,8.905.129s6.582-.022,8.905-.129a12.162,12.162,0,0,0,4.092-.758,7.3,7.3,0,0,0,4.182-4.182,12.189,12.189,0,0,0,.759-4.093c.106-2.323.129-3.021.129-8.9s-.023-6.581-.129-8.905A12.176,12.176,0,0,0,2910.859,9032.367Zm-17.179,24.313A11.316,11.316,0,1,1,2905,9045.364,11.315,11.315,0,0,1,2893.68,9056.68Zm11.764-20.435a2.645,2.645,0,1,1,2.644-2.646A2.645,2.645,0,0,1,2905.444,9036.245Z"
+                                            fill="#fff" />
+                                        <path id="路径_6" data-name="路径 6"
+                                            d="M2893.68,9010.364a35,35,0,1,0,35,35A35,35,0,0,0,2893.68,9010.364Zm21.905,44.086a16.16,16.16,0,0,1-1.025,5.349,11.271,11.271,0,0,1-6.445,6.445,16.149,16.149,0,0,1-5.349,1.023c-2.35.108-3.1.134-9.086.134s-6.735-.025-9.086-.134a16.16,16.16,0,0,1-5.349-1.023,11.271,11.271,0,0,1-6.445-6.445,16.162,16.162,0,0,1-1.024-5.349c-.107-2.352-.133-3.1-.133-9.086s.026-6.735.133-9.086a16.169,16.169,0,0,1,1.024-5.35,11.273,11.273,0,0,1,6.445-6.444,16.182,16.182,0,0,1,5.349-1.024c2.351-.108,3.1-.133,9.086-.133s6.736.024,9.086.133a16.172,16.172,0,0,1,5.349,1.024,11.273,11.273,0,0,1,6.445,6.444,16.166,16.166,0,0,1,1.025,5.35c.107,2.351.132,3.1.132,9.086S2915.692,9052.1,2915.585,9054.45Z"
+                                            fill="#fff" />
+                                    </g>
+                                </svg>
+
+
+                            </a>
+                            <a>
+                                <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 70 70">
+                                    <g id="组_16" data-name="组 16" transform="translate(-2954.869 -9010.364)">
+                                        <path id="路径_7" data-name="路径 7" d="M2985.2,9052.364l12.124-7-12.124-7Z"
+                                            fill="#fff" />
+                                        <path id="路径_8" data-name="路径 8"
+                                            d="M2989.869,9010.364a35,35,0,1,0,35,35A35,35,0,0,0,2989.869,9010.364Zm22.358,46.231a5.845,5.845,0,0,1-4.125,4.126c-3.64.977-18.233.977-18.233.977s-14.593,0-18.232-.977a5.846,5.846,0,0,1-4.126-4.126c-.975-3.639-.975-11.231-.975-11.231s0-7.593.975-11.232a5.846,5.846,0,0,1,4.126-4.126c3.639-.976,18.232-.976,18.232-.976s14.593,0,18.233.976a5.845,5.845,0,0,1,4.125,4.126c.976,3.64.976,11.232.976,11.232S3013.2,9052.957,3012.227,9056.6Z"
+                                            fill="#fff" />
+                                        <path id="路径_9" data-name="路径 9" d="M2985.2,9052.364v-14l12.123,7Z"
+                                            fill="#fff" />
+                                    </g>
+                                </svg>
+
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="md:hidden mt-9 text-gray-400 text-xs">
+                Copyright © 2021 Fabula. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    <script src="js/case.js?v=202112041622"></script>
+</body>
+
+</html>
