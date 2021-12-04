@@ -3,7 +3,7 @@ var app = new Vue({
 
     data: function () {
         return {
-
+            menu_current:'',
             menu_open: false,
             scroll_top_offset: null,
             company_menu_current: '公司簡介',

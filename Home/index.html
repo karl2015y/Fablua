@@ -6,15 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="/Asset/css/style.css?v=202112041622" rel="stylesheet">
-    <script src="/Asset/js/index.js?v=202112041622"></script>
+    <link href="/Asset/css/style.css?v=202112041800" rel="stylesheet">
+    <script src="/Asset/js/index.js?v=202112041800"></script>
 
     <script src="https://unpkg.com/spacingjs" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://unpkg.com/vue-agile"></script>
     <link rel="stylesheet" href="https://unpkg.com/vue-agile/dist/VueAgile.css">
-    <link rel="stylesheet" href="/Asset/css/agile.css?v=202112041622">
+    <link rel="stylesheet" href="/Asset/css/agile.css?v=202112041800">
 
     <!-- https://fonts.google.com/noto/specimen/Noto+Sans+TC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,13 +53,18 @@
 
                     <ul
                         class="overflow-hidden md:bg-transparent bg-gray-50 flex flex-col lg:gap-14 md:gap-5 h-screen md:flex-row md:h-auto md:shadow-none md:w-auto ml-auto shadow-2xl text-center w-1/2">
-                        <li
-                            class="md:shadow-none shadow-inner h-16 flex items-center justify-center border-b md:border-0">
-                            關於我們</li>
-                        <li
-                            class="h-16 flex items-center justify-center border-b md:border-0 bg-sec text-white md:bg-transparent md:text-sec">
-                            精選故事</li>
-                        <li class="h-16 flex items-center justify-center border-b md:border-0">商企招募</li>
+                        <li v-on:click="move2Element()" :class="{'text-white bg-sec md:text-sec md:bg-transparent ':menu_current=='關於我們'}"
+                            class="cursor-pointer md:shadow-none shadow-inner h-16 flex items-center justify-center border-b md:border-0">
+                            <a href="/Home/#關於我們">關於我們</a>
+                        </li>
+                        <li v-on:click="move2Element()" :class="{'text-white bg-sec md:text-sec md:bg-transparent':menu_current=='精選故事'}"
+                            class="cursor-pointer h-16 flex items-center justify-center border-b md:border-0 ">
+                            <a href="/Home/#精選故事">精選故事</a>
+                        </li>
+                        <li v-on:click="move2Element()" :class="{'text-white bg-sec md:text-sec md:bg-transparent':menu_current=='商企招募'}"
+                            class="cursor-pointer h-16 flex items-center justify-center border-b md:border-0">
+                            <a href="/Home/#商企招募">商企招募</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -80,7 +85,7 @@
                     <div
                         class="text-white px-10 md:px-14 lg:px-56 absolute left-0 top-0 w-full h-full flex flex-col items-center justify-center">
                         <div class="md:px-40 lg:px-48">
-                            <h1 class="text-center text-3xl desktop:text-5xl font-bold mb-6">協2助2推廣在2地商家</h1>
+                            <h1 class="text-center text-3xl desktop:text-5xl font-bold mb-6">協助推廣在地商家</h1>
                             <p>
                                 B paragraph is a series of sentences that are organized and coherent, and are all
                                 related to
@@ -102,7 +107,7 @@
                     <div
                         class="text-white px-10 md:px-14 lg:px-56 absolute left-0 top-0 w-full h-full flex flex-col items-center justify-center">
                         <div class="md:px-40 lg:px-48">
-                            <h1 class="text-center text-3xl desktop:text-5xl font-bold mb-6">協2助2推廣在2地商家</h1>
+                            <h1 class="text-center text-3xl desktop:text-5xl font-bold mb-6">協助推廣在地商家2</h1>
                             <p>
                                 B paragraph is a series of sentences that are organized and coherent, and are all
                                 related to
@@ -121,7 +126,7 @@
 
         </section>
         <!-- 精選故事 -->
-        <section class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-36  py-20">
+        <section ref="精選故事" class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-36  py-20">
             <div class="">
                 <h1 class="font-bold text-2xl text-center text-main mb-5 lg:mb-6">精選故事</h1>
                 <p class="mb-20 lg:mb-16 text-third">
@@ -130,10 +135,10 @@
             </div>
             <!-- 六個文章(前三) -->
             <div class="flex justify-between flex-wrap">
-                <a v-for="i in 3">
+                <a href="/Case" v-for="i in 3">
                     <div class="w-full lg:w-80 md:w-52 mb-3.5 pb-3.5 md:mb-0 md:pb-7 hover:shadow-xl">
                         <div class="w-full md:w-auto md:h-auto">
-                            <img class="h-full w-full" src="./img/1.jpeg" />
+                            <img class="h-full w-full" src="img/photo-02.jpeg" />
 
                         </div>
                         <div class="lg:px-4 md:px-2 px-1">
@@ -173,13 +178,13 @@
         <section class="h-48 md:h-64">
             <!-- <div style="background-image: url('./img/1.jpeg');" class="h-full bg-fixed bg-center bg-no-repeat bg-cover"></div> -->
             <div class=" h-full overflow-hidden relative">
-                <img src="./img/1.jpeg" style="z-index: -10;"
+                <img src="img/photo-01.jpeg" style="z-index: -10;"
                     class="absolute offset-img fixed top-0 left-0 h-screen w-full object-cover object-center">
             </div>
 
         </section>
         <!-- 關於我們 -->
-        <section class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-32  py-20 bg-gray-50">
+        <section ref="關於我們" class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-32  py-20 bg-gray-50">
             <div class="md:flex gap-20">
                 <div>
                     <h1 class="font-bold text-2xl text-center text-main mb-5 lg:mb-6 md:text-left">
@@ -195,23 +200,30 @@
             </div>
         </section>
         <!-- 商家企業招募 -->
-        <section class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-16  py-20 ">
+        <section ref='商企招募' class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-32  py-20 ">
             <h1 class="font-bold text-2xl text-center text-main mb-6">
                 <span>商家企業招募</span>
             </h1>
             <form action="" method="post" class="flex flex-col items-center">
                 <div class="md:flex gap-3.5 w-full">
-                    <input type="text" placeholder="姓名 /  稱謂" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
-                    <input type="text" placeholder="店家 / 公司行號" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
-                    <input type="text" placeholder="行業別" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="姓名 /  稱謂"
+                        class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="店家 / 公司行號"
+                        class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="行業別"
+                        class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
                 </div>
                 <div class="md:flex gap-3.5 w-full">
-                    <input type="text" placeholder="聯絡電話" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
-                    <input type="text" placeholder="Email" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
-                    <input type="text" placeholder="所在區域" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="聯絡電話"
+                        class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="Email"
+                        class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
+                    <input type="text" placeholder="所在區域"
+                        class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-3.5">
                 </div>
 
-                <textarea placeholder="寫下您的留言" class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-12 h-44"></textarea>
+                <textarea placeholder="寫下您的留言"
+                    class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-12 h-44"></textarea>
                 <button type="button" class="bg-main text-white font-medium w-20 h-10"><span>送出</span></button>
             </form>
         </section>
@@ -317,7 +329,7 @@
             </div>
         </footer>
     </div>
-    <script src="js/home.js?v=202112041622"></script>
+    <script src="js/home.js?v=202112041800"></script>
 </body>
 
 </html>

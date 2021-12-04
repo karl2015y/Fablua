@@ -32755,26 +32755,36 @@ video {
   content: none;
 }
 
-@font-face {
-  font-family: "Merriweather";
+/* @font-face {
+    font-family: "Merriweather";
+    src: url("/Asset/fonts/Merriweather-Bold.ttf") format("truetype");
+    font-weight: Bold;
+    font-style: Bold;
+    font-display: block;
+  } */
 
-  /* src: url("../fonts/Merriweather-Bold.ttf?jolgxp") format("truetype"); */
+/* 英文 */
+
+@font-face{
+  font-family: "custom-sans-serif";
 
   src: url("/Asset/fonts/Merriweather-Bold.ttf") format("truetype");
 
-  font-weight: Bold;
-
-  font-style: Bold;
-
-  font-display: block;
+  unicode-range: U+00-024F;
 }
 
 body{
+  /* font-family: 'custom-sans-serif', sans-serif; */
   font-family: 'Noto Sans TC', sans-serif;
+  /* font-family: 'custom-sans-serif', 'Noto Sans TC'; */
 }
 
 .MW-font{
   font-family: 'Merriweather' !important;
+}
+
+.Mix-font{
+  font-family: 'custom-sans-serif', 'Noto Sans TC'!important;
 }
 
 @media (min-width: 768px) {

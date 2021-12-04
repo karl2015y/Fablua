@@ -6,9 +6,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="/Asset/css/style.css?v=202112041622" rel="stylesheet">
-    <link href="css/case.css?v=202112041622" rel="stylesheet">
-    <script src="/Asset/js/index.js?v=202112041622"></script>
+    <link href="/Asset/css/style.css?v=202112041800" rel="stylesheet">
+    <link href="css/case.css?v=202112041800" rel="stylesheet">
+    <script src="/Asset/js/index.js?v=202112041800"></script>
 
     <script src="https://unpkg.com/spacingjs" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -33,7 +33,9 @@
         <!-- 頁首 -->
         <header
             class="top-0 bg-white z-10 shadow sticky flex justify-between items-center h-16 md:h-32 px-10 md:px-14 lg:px-56">
-            <div class="MW-font font-bold text-main text-3xl ">Fabula</div>
+            <div class="MW-font font-bold text-main text-3xl ">
+                <a href="/Home">Fabula</a>
+            </div>
             <!-- menu 按鈕 -->
             <div>
                 <div v-on:click="menu_open=!menu_open" :class="menu_open?'items-start':'items-end'"
@@ -53,13 +55,18 @@
 
                     <ul
                         class="overflow-hidden md:bg-transparent bg-gray-50 flex flex-col lg:gap-14 md:gap-5 h-screen md:flex-row md:h-auto md:shadow-none md:w-auto ml-auto shadow-2xl text-center w-1/2">
-                        <li
-                            class="md:shadow-none shadow-inner h-16 flex items-center justify-center border-b md:border-0">
-                            關於我們</li>
-                        <li
-                            class="h-16 flex items-center justify-center border-b md:border-0 bg-sec text-white md:bg-transparent md:text-sec">
-                            精選故事</li>
-                        <li class="h-16 flex items-center justify-center border-b md:border-0">商企招募</li>
+                        <li v-on:click="move2Element()" :class="{'text-white bg-sec md:text-sec md:bg-transparent ':menu_current=='關於我們'}"
+                            class="cursor-pointer md:shadow-none shadow-inner h-16 flex items-center justify-center border-b md:border-0">
+                            <a href="/Home/#關於我們">關於我們</a>
+                        </li>
+                        <li v-on:click="move2Element()" :class="{'text-white bg-sec md:text-sec md:bg-transparent':menu_current=='精選故事'}"
+                            class="cursor-pointer h-16 flex items-center justify-center border-b md:border-0 ">
+                            <a href="/Home/#精選故事">精選故事</a>
+                        </li>
+                        <li v-on:click="move2Element()" :class="{'text-white bg-sec md:text-sec md:bg-transparent':menu_current=='商企招募'}"
+                            class="cursor-pointer h-16 flex items-center justify-center border-b md:border-0">
+                            <a href="/Home/#商企招募">商企招募</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -70,9 +77,9 @@
         <!-- 字在右邊的滿版大圖 -->
         <section>
             <div class="w-full relative">
-                <img class="hero-img" src="img/1.jpeg" alt="">
+                <img class="hero-img" src="img/photo-02.jpeg" alt="">
                 <div
-                    class="w-80 md:w-5/12  absolute bottom-16 right-0 bg-black bg-opacity-50 px-10 py-7 md:px-12 lg:px-0 lg:pl-16 lg:pr-28 md:py-11">
+                    class="w-80 md:w-5/12  absolute bottom-16 right-0 bg-black bg-opacity-50 px-10 py-7 lg:px-0 lg:pl-16 lg:pr-28 md:py-11">
                     <span class="text-xl md:text-2xl font-medium text-white">
                         內文重點示範文字 ， 字數限制如敘述內可容納之...
                     </span>
@@ -298,11 +305,11 @@
                         </div>
                         <div class="pt-4 md:pt-2.5 text-gray-600">
                             <div class="text-sm ">編輯者</div>
-                            <h1 class="MW-font text-xl font-bold inline mr-3">Christina Lee</h1>
-                            <h1 class="text-xl font-medium inline">李克莉</h1>
+                            <!-- 需要英文再開啟 -->
+                            <h1 class="text-xl font-bold inline Mix-font">李克莉Eng</h1>
                         </div>
                     </div>
-                    <p class="pt-7 pb-14 md:ml-20 md:pl-7 md:pb-0 md:pt-0 md:mt-3">
+                    <p class="pt-7 pb-14 md:ml-20 md:pl-7 md:pb-0 md:pt-0 md:mt-0">
                         A paragraph is a series of sentences that are organized and coherent, and are all related to a
                         single topic. Almost every piece of writing you do that is longer than a few sentences should be
                         organized into paragraphs.
@@ -320,7 +327,7 @@
                 <!-- 更多相關文章 ... -->
                 <section class="py-7">
                     <div class="text-sm text-gray-400 mb-9">更多相關文章 ...</div>
-                    <div class="flex flex-col md:flex-row md:gap-20 md:mb-7">
+                    <div class="flex flex-col md:flex-row md:gap-11 lg:gap-20 md:mb-7">
                         <div v-for="i in 2"
                             class="flex gap-5 md:gap-3 mb-7 md:mb-0 md:pb-4 md:flex-col md:w-80 hover:shadow-2xl">
                             <div class="w-36 h-24 md:w-full lg:h-60 md:h-36" style="min-width: 8.5rem;">
@@ -455,7 +462,7 @@
                 </section>
                 <!-- 累計瀏覽人次 -->
                 <section>
-                    <div class="flex mt-8 pb-8 ">
+                    <div class="flex mt-8 pb-16 ">
                         <div class="flex whitespace-nowrap md:text-xs lg:text-base">累計瀏覽人次
                             <div class="text-sec ml-14 lg:ml-6 md:ml-3 mr-3">199268</div> 次
                         </div>
@@ -564,7 +571,7 @@
             </div>
         </footer>
     </div>
-    <script src="js/case.js?v=202112041622"></script>
+    <script src="js/case.js?v=202112041800"></script>
 </body>
 
 </html>
