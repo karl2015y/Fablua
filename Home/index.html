@@ -33,7 +33,12 @@
         <!-- 頁首 -->
         <header
             class="top-0 bg-white z-10 shadow sticky flex justify-between items-center h-16 md:h-32 px-10 md:px-14 lg:px-56">
-            <div class="MW-font font-bold text-main text-3xl ">Fabula</div>
+            <!-- <div class="MW-font font-bold text-main text-3xl ">Fabula</div> -->
+            <div>
+                <a href="/Home">
+                    <img class="w-24 h-12 object-center object-contain md:w-28 md:h-14" src="/Asset/icon/Logo-g.png" alt="">
+                </a> 
+            </div>
             <!-- menu 按鈕 -->
             <div>
                 <div v-on:click="menu_open=!menu_open" :class="menu_open?'items-start':'items-end'"
@@ -53,15 +58,18 @@
 
                     <ul
                         class="overflow-hidden md:bg-transparent bg-gray-50 flex flex-col lg:gap-14 md:gap-5 h-screen md:flex-row md:h-auto md:shadow-none md:w-auto ml-auto shadow-2xl text-center w-1/2">
-                        <li v-on:click="move2Element()" :class="{'text-white bg-sec md:text-sec md:bg-transparent ':menu_current=='關於我們'}"
+                        <li v-on:click="move2Element()"
+                            :class="{'text-white bg-sec md:text-sec md:bg-transparent ':menu_current=='關於我們'}"
                             class="cursor-pointer md:shadow-none shadow-inner h-16 flex items-center justify-center border-b md:border-0">
                             <a href="/Home/#關於我們">關於我們</a>
                         </li>
-                        <li v-on:click="move2Element()" :class="{'text-white bg-sec md:text-sec md:bg-transparent':menu_current=='精選故事'}"
+                        <li v-on:click="move2Element()"
+                            :class="{'text-white bg-sec md:text-sec md:bg-transparent':menu_current=='精選故事'}"
                             class="cursor-pointer h-16 flex items-center justify-center border-b md:border-0 ">
                             <a href="/Home/#精選故事">精選故事</a>
                         </li>
-                        <li v-on:click="move2Element()" :class="{'text-white bg-sec md:text-sec md:bg-transparent':menu_current=='商企招募'}"
+                        <li v-on:click="move2Element()"
+                            :class="{'text-white bg-sec md:text-sec md:bg-transparent':menu_current=='商企招募'}"
                             class="cursor-pointer h-16 flex items-center justify-center border-b md:border-0">
                             <a href="/Home/#商企招募">商企招募</a>
                         </li>
@@ -126,7 +134,7 @@
 
         </section>
         <!-- 精選故事 -->
-        <section ref="精選故事" class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-36  py-20">
+        <section ref="精選故事" class="px-10 md:px-14 lg:px-56 lg:py-36  py-20">
             <div class="">
                 <h1 class="font-bold text-2xl text-center text-main mb-5 lg:mb-6">精選故事</h1>
                 <p class="mb-20 lg:mb-16 text-third">
@@ -136,7 +144,7 @@
             <!-- 六個文章(前三) -->
             <div class="flex justify-between flex-wrap">
                 <a href="/Case" v-for="i in 3">
-                    <div class="w-full lg:w-80 md:w-52 mb-3.5 pb-3.5 md:mb-0 md:pb-7 md:hover:shadow-xl hover:shadow">
+                    <div class="w-full lg:w-80 md:w-52 pb-3.5 mb-3.5 md:mb-1.5 md:pb-1.5 md:hover:shadow-xl hover:shadow">
                         <div class="w-full md:w-auto md:h-auto">
                             <img class="h-full w-full" src="img/photo-02.jpeg" />
 
@@ -152,8 +160,9 @@
             </div>
             <!-- 六個文章(後三) -->
             <div class="mt-5 md:mt-10 flex justify-between flex-wrap">
-                <a href="#精選故事"  v-for="i in 3">
-                    <div class="w-full md:w-52 lg:w-80 pb-3.5 mb-3.5 md:mb-1.5 md:pb-1.5 flex gap-5 md:block md:hover:shadow-2xl hover:shadow">
+                <a href="#精選故事" v-for="i in 3">
+                    <div
+                        class="w-full md:w-52 lg:w-80 mb-7 md:mb-1.5 md:pb-1.5 flex gap-5 md:block md:hover:shadow-2xl hover:shadow">
                         <div class="w-32 h-24 md:w-auto md:h-auto" style="min-width: 8rem;">
                             <img class="h-full w-full" src="./img/1.jpeg" />
 
@@ -169,7 +178,7 @@
                 </a>
             </div>
             <div class="mt-7 md:mt-16 pt-2 text-center">
-                <a href="#看更多故事"  class="bg-sec hover:bg-main text-white px-7 py-2 md:px-9 md:py-3">看更多故事</a>
+                <a href="#看更多故事" class="bg-sec hover:bg-main text-white px-7 py-2 md:px-9 md:py-3">看更多故事</a>
             </div>
 
         </section>
@@ -184,7 +193,7 @@
 
         </section>
         <!-- 關於我們 -->
-        <section ref="關於我們" class="px-10 md:px-14 lg:px-52 lg:mx-3 lg:py-32  py-20 bg-gray-50">
+        <section ref="關於我們" class="px-10 md:px-14 lg:px-56 lg:py-32  py-20 bg-gray-50">
             <div class="md:flex gap-20">
                 <div>
                     <h1 class="font-bold text-2xl text-center text-main mb-5 lg:mb-6 md:text-left">
@@ -195,7 +204,7 @@
                     </p>
                 </div>
                 <div class="w-full h-auto">
-                    <img class="h-full w-full" src="./img/1.jpeg" />
+                    <img class="h-full w-full object-center object-cover" src="./img/1.jpeg" />
                 </div>
             </div>
         </section>
@@ -224,7 +233,8 @@
 
                 <textarea placeholder="寫下您的留言"
                     class="focus:outline-none focus:ring ring-sec w-full bg-gray-100 py-5 px-7 mb-12 h-44"></textarea>
-                <button type="button" class="bg-sec hover:bg-main text-white font-medium w-20 h-10"><span>送出</span></button>
+                <button type="button"
+                    class="bg-sec hover:bg-main text-white font-medium w-20 h-10"><span>送出</span></button>
             </form>
         </section>
 
@@ -234,7 +244,9 @@
             <div class="flex ">
                 <div class="flex flex-col md:flex-row gap-10 md:w-3/4">
                     <div class="md:w-1/3">
-                        <h1 class="text-2xl MW-font font-bold ">Fabula</h1>
+                        <!-- <h1 class="text-2xl MW-font font-bold ">Fabula</h1> -->
+                        <div><img src="/Asset/icon/Logo-w.png" alt=""
+                                class="w-24 h-12 object-center object-contain md:w-28 md:h-14"></div>
                         <span class="hidden md:block mt-1.5 text-gray-400 text-xs">
                             Copyright © 2021 Fabula.<br>
                             All rights reserved.
@@ -277,44 +289,57 @@
 
                         <h2 class="text-lg MW-font font-bold ">Media</h2>
                         <div class="mt-2.5 md:mt-4 flex gap-3.5">
-                            <a>
-                                <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 70 69.574">
-                                    <path id="路径_3" data-name="路径 3"
-                                        d="M2797.491,9010.364a35,35,0,0,0-5.468,69.574v-24.457h-8.887v-10.117h8.887v-7.711c0-8.772,5.225-13.617,13.219-13.617a53.89,53.89,0,0,1,7.835.683v8.614h-4.413c-4.348,0-5.7,2.7-5.7,5.465v6.566h9.707l-1.552,10.117h-8.155v24.457a35,35,0,0,0-5.469-69.574Z"
-                                        transform="translate(-2762.491 -9010.364)" fill="#6ca27f" />
-                                </svg>
+                            <a href="#Facebook">
+                                <svg class="w-9 h-9 md:w-8 md:h-8 fill-current text-white hover:text-sec" version="1.1"
+                                    id="圖層_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40"
+                                    style="enable-background:new 0 0 40 40;" xml:space="preserve">
 
+                                    <path class="st0"
+                                        d="M20,0C9,0,0,9,0,20c0,10,7.3,18.3,16.9,19.8v-14h-5.1V20h5.1v-4.4c0-5,3-7.8,7.6-7.8c2.2,0,4.5,0.4,4.5,0.4v4.9
+                               h-2.5c-2.5,0-3.3,1.5-3.3,3.1V20h5.5l-0.9,5.8h-4.7v14C32.7,38.3,40,30,40,20C40,9,31,0,20,0z" />
+                                </svg>
                             </a>
-                            <a>
-                                <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 70 70">
-                                    <g id="组_15" data-name="组 15" transform="translate(-2858.68 -9010.364)">
-                                        <path id="路径_4" data-name="路径 4"
-                                            d="M2893.68,9038.018a7.346,7.346,0,1,0,7.346,7.347A7.345,7.345,0,0,0,2893.68,9038.018Z"
-                                            fill="#fff" />
-                                        <path id="路径_5" data-name="路径 5"
-                                            d="M2910.859,9032.367a7.3,7.3,0,0,0-4.182-4.183,12.206,12.206,0,0,0-4.092-.759c-2.324-.105-3.021-.129-8.905-.129s-6.581.023-8.905.129a12.214,12.214,0,0,0-4.092.759,7.3,7.3,0,0,0-4.182,4.183,12.182,12.182,0,0,0-.759,4.092c-.106,2.324-.128,3.021-.128,8.905s.022,6.581.128,8.9a12.2,12.2,0,0,0,.759,4.093,7.3,7.3,0,0,0,4.182,4.182,12.17,12.17,0,0,0,4.092.758c2.324.106,3.021.129,8.905.129s6.582-.022,8.905-.129a12.162,12.162,0,0,0,4.092-.758,7.3,7.3,0,0,0,4.182-4.182,12.189,12.189,0,0,0,.759-4.093c.106-2.323.129-3.021.129-8.9s-.023-6.581-.129-8.905A12.176,12.176,0,0,0,2910.859,9032.367Zm-17.179,24.313A11.316,11.316,0,1,1,2905,9045.364,11.315,11.315,0,0,1,2893.68,9056.68Zm11.764-20.435a2.645,2.645,0,1,1,2.644-2.646A2.645,2.645,0,0,1,2905.444,9036.245Z"
-                                            fill="#fff" />
-                                        <path id="路径_6" data-name="路径 6"
-                                            d="M2893.68,9010.364a35,35,0,1,0,35,35A35,35,0,0,0,2893.68,9010.364Zm21.905,44.086a16.16,16.16,0,0,1-1.025,5.349,11.271,11.271,0,0,1-6.445,6.445,16.149,16.149,0,0,1-5.349,1.023c-2.35.108-3.1.134-9.086.134s-6.735-.025-9.086-.134a16.16,16.16,0,0,1-5.349-1.023,11.271,11.271,0,0,1-6.445-6.445,16.162,16.162,0,0,1-1.024-5.349c-.107-2.352-.133-3.1-.133-9.086s.026-6.735.133-9.086a16.169,16.169,0,0,1,1.024-5.35,11.273,11.273,0,0,1,6.445-6.444,16.182,16.182,0,0,1,5.349-1.024c2.351-.108,3.1-.133,9.086-.133s6.736.024,9.086.133a16.172,16.172,0,0,1,5.349,1.024,11.273,11.273,0,0,1,6.445,6.444,16.166,16.166,0,0,1,1.025,5.35c.107,2.351.132,3.1.132,9.086S2915.692,9052.1,2915.585,9054.45Z"
-                                            fill="#fff" />
+                            <a href="#Instagram">
+                                <svg class="w-9 h-9 md:w-8 md:h-8 fill-current text-white hover:text-sec" version="1.1"
+                                    id="圖層_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40"
+                                    style="enable-background:new 0 0 40 40;" xml:space="preserve">
+
+                                    <g>
+                                        <circle class="st0" cx="20" cy="20" r="4.2" />
+                                        <path class="st0"
+                                            d="M29.8,12.6c-0.2-0.6-0.5-1-0.9-1.4c-0.4-0.4-0.9-0.7-1.4-0.9C27,10,26.3,9.8,25.1,9.8
+                                   c-1.3-0.1-1.7-0.1-5.1-0.1s-3.8,0-5.1,0.1c-1.2,0.1-1.9,0.3-2.3,0.4c-0.6,0.2-1,0.5-1.4,0.9c-0.4,0.4-0.7,0.9-0.9,1.4
+                                   C10,13,9.8,13.7,9.7,14.9c-0.1,1.3-0.1,1.7-0.1,5.1s0,3.8,0.1,5.1c0.1,1.2,0.3,1.9,0.4,2.3c0.2,0.6,0.5,1,0.9,1.4
+                                   c0.4,0.4,0.9,0.7,1.4,0.9c0.4,0.2,1.1,0.4,2.3,0.4c1.3,0.1,1.7,0.1,5.1,0.1s3.8,0,5.1-0.1c1.2-0.1,1.9-0.3,2.3-0.4
+                                   c0.6-0.2,1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4c0.2-0.4,0.4-1.1,0.4-2.3c0.1-1.3,0.1-1.7,0.1-5.1s0-3.8-0.1-5.1
+                                   C30.2,13.7,30,13,29.8,12.6z M20,26.5c-3.6,0-6.5-2.9-6.5-6.5s2.9-6.5,6.5-6.5s6.5,2.9,6.5,6.5S23.6,26.5,20,26.5z M26.7,14.8
+                                   c-0.8,0-1.5-0.7-1.5-1.5c0-0.8,0.7-1.5,1.5-1.5c0.8,0,1.5,0.7,1.5,1.5C28.2,14.1,27.6,14.8,26.7,14.8z" />
+                                        <path class="st0" d="M20,0C9,0,0,9,0,20s9,20,20,20s20-9,20-20S31,0,20,0z M32.5,25.2c-0.1,1.3-0.3,2.3-0.6,3.1
+                                   c-0.3,0.8-0.8,1.5-1.5,2.2c-0.7,0.7-1.4,1.1-2.2,1.5c-0.8,0.3-1.7,0.5-3.1,0.6c-1.3,0.1-1.8,0.1-5.2,0.1s-3.8,0-5.2-0.1
+                                   c-1.3-0.1-2.3-0.3-3.1-0.6c-0.8-0.3-1.5-0.8-2.2-1.5c-0.7-0.7-1.1-1.4-1.5-2.2c-0.3-0.8-0.5-1.7-0.6-3.1c-0.1-1.3-0.1-1.8-0.1-5.2
+                                   s0-3.8,0.1-5.2c0.1-1.3,0.3-2.3,0.6-3.1c0.3-0.8,0.8-1.5,1.5-2.2c0.7-0.7,1.4-1.1,2.2-1.5c0.8-0.3,1.7-0.5,3.1-0.6
+                                   c1.3-0.1,1.8-0.1,5.2-0.1s3.8,0,5.2,0.1c1.3,0.1,2.3,0.3,3.1,0.6c0.8,0.3,1.5,0.8,2.2,1.5c0.7,0.7,1.1,1.4,1.5,2.2
+                                   c0.3,0.8,0.5,1.7,0.6,3.1c0.1,1.3,0.1,1.8,0.1,5.2S32.6,23.8,32.5,25.2z" />
                                     </g>
                                 </svg>
 
 
+
                             </a>
-                            <a>
-                                <svg class="w-9 h-9 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 70 70">
-                                    <g id="组_16" data-name="组 16" transform="translate(-2954.869 -9010.364)">
-                                        <path id="路径_7" data-name="路径 7" d="M2985.2,9052.364l12.124-7-12.124-7Z"
-                                            fill="#fff" />
-                                        <path id="路径_8" data-name="路径 8"
-                                            d="M2989.869,9010.364a35,35,0,1,0,35,35A35,35,0,0,0,2989.869,9010.364Zm22.358,46.231a5.845,5.845,0,0,1-4.125,4.126c-3.64.977-18.233.977-18.233.977s-14.593,0-18.232-.977a5.846,5.846,0,0,1-4.126-4.126c-.975-3.639-.975-11.231-.975-11.231s0-7.593.975-11.232a5.846,5.846,0,0,1,4.126-4.126c3.639-.976,18.232-.976,18.232-.976s14.593,0,18.233.976a5.845,5.845,0,0,1,4.125,4.126c.976,3.64.976,11.232.976,11.232S3013.2,9052.957,3012.227,9056.6Z"
-                                            fill="#fff" />
-                                        <path id="路径_9" data-name="路径 9" d="M2985.2,9052.364v-14l12.123,7Z"
-                                            fill="#fff" />
+                            <a href="#Youtube">
+                                <svg class="w-9 h-9 md:w-8 md:h-8 fill-current text-white hover:text-sec " version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40"
+                                    style="enable-background:new 0 0 40 40;" xml:space="preserve">
+
+                                    <g>
+                                        <polygon class="st0" points="17.3,24 24.3,20 17.3,16 	" />
+                                        <path class="st0" d="M20,0C9,0,0,9,0,20c0,11,9,20,20,20c11,0,20-9,20-20C40,9,31,0,20,0z M32.8,26.4c-0.3,1.1-1.2,2.1-2.4,2.4
+		C28.3,29.3,20,29.3,20,29.3s-8.3,0-10.4-0.6c-1.1-0.3-2.1-1.2-2.4-2.4C6.7,24.3,6.7,20,6.7,20s0-4.3,0.6-6.4
+		c0.3-1.1,1.2-2.1,2.4-2.4c2.1-0.6,10.4-0.6,10.4-0.6s8.3,0,10.4,0.6c1.1,0.3,2.1,1.2,2.4,2.4c0.6,2.1,0.6,6.4,0.6,6.4
+		S33.3,24.3,32.8,26.4z" />
+                                        <path class="st0" d="M17.3,24v-8l6.9,4L17.3,24z" />
                                     </g>
                                 </svg>
 
