@@ -1,5 +1,14 @@
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: true,
+    content: [
+      'Case/index.html',
+      'Home/index.html',
+    ],
+  },
+
+
+
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
@@ -9,7 +18,7 @@ module.exports = {
       'lg': '1440px',
       // => @media (min-width: 1440px) { ... }
     },
-   
+
     extend: {
       colors: {
         'main': '#245132',
