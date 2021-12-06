@@ -8,10 +8,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 共用檔案 -->
-    <link href="/Asset/css/style.css?v=202112062050" rel="stylesheet">
-    <script src="/Asset/js/index.js?v=202112062050"></script>
+    <link href="/Asset/css/style.css" rel="stylesheet">
+    <script src="/Asset/js/index.js"></script>
     <!-- 該檔案的css -->
-    <link rel="stylesheet" href="css/case.css">
+    <link rel="stylesheet" href="/Asset/css/case.css">
     <!-- vue@2 -->
     <script src="/Asset/plugin/vue.js"></script>
     <!-- animate -->
@@ -19,17 +19,13 @@
     <!-- Agile -->
     <script src="/Asset/plugin/VueAgile/VueAgile.min.js"></script>
     <link rel="stylesheet" href="/Asset/plugin/VueAgile/VueAgile.css">
-    <link rel="stylesheet" href="/Asset/css/agile.css?v=202112062050">
+    <link rel="stylesheet" href="/Asset/css/agile.css">
     <!-- https://fonts.google.com/noto/specimen/Noto+Sans+TC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- smooth-scroll -->
     <script src="/Asset/plugin/vue-smooth-scroll.min.js"></script>
-
-    <script src="https://unpkg.com/spacingjs" defer></script>
-
-
 
 </head>
 
@@ -93,7 +89,7 @@
         <!-- 字在右邊的滿版大圖 -->
         <section>
             <div class="w-full relative">
-                <img class="hero-img" src="img/photo-02.jpeg" alt="">
+                <img class="hero-img" src="/Asset/img/photo-02.jpeg" alt="">
                 <div
                     class="w-80 md:w-5/12  absolute bottom-16 right-0 bg-black bg-opacity-50 px-10 py-7 lg:px-0 lg:pl-16 lg:pr-28 md:py-11">
                     <span class="text-xl md:text-2xl font-medium text-white">
@@ -113,7 +109,7 @@
                         <p class="md:mb-6">A paragraph is a series of sentences that are organized and
                             coherent, and are all related to a single topic. Almost every piece of writing you do that
                             is longer than a few sentences should be organized into paragraphs.</p>
-                        <img class="mt-7 md:mt-9 w-full h-44 md:h-80 object-center object-cover" src="img/1.jpeg" alt="">
+                        <img class="mt-7 md:mt-9 w-full h-44 md:h-80 object-center object-cover" src="/Asset/img/1.jpeg" alt="">
                         <p class="mt-7 md:mt-9 md:mb-0">A paragraph is a series of sentences that are organized and
                             coherent, and are all related to a single topic. Almost every piece of writing you do that
                             is longer than a few sentences should be organized into paragraphs.</p>
@@ -177,7 +173,7 @@
                 <section ref="company_menu" class="pt-12">
                     <div class="flex justify-between md:justify-start md:gap-6">
                         <div class="w-28 h-28 md:w-40 md:h-40">
-                            <img class="w-full h-full object-center object-cover" src="img/1.jpeg" alt="">
+                            <img class="w-full h-full object-center object-cover" src="/Asset/img/1.jpeg" alt="">
                         </div>
                         <div class="w-64 md:w-72 lg:w-96 flex flex-col justify-between md:justify-around">
                             <h1 class="text-2xl text-main font-bold">ＯＯ企業有限公司</h1>
@@ -317,7 +313,7 @@
                 <section class="pt-7 md:py-12 md:border-b-2">
                     <div class="flex gap-7">
                         <div class="w-20 h-20">
-                            <img class="rounded-full w-full h-full object-center object-cover" src="img/1.jpeg" alt="">
+                            <img class="rounded-full w-full h-full object-center object-cover" src="/Asset/img/1.jpeg" alt="">
                         </div>
                         <div class="pt-4 md:pt-2.5">
                             <div class="text-sm ">編輯者</div>
@@ -346,7 +342,7 @@
                         <div v-for="i in 2"
                             class="flex gap-5 md:gap-3 mb-7 md:mb-0 md:pb-4 md:flex-col md:w-80 md:hover:shadow-2xl hover:shadow">
                             <div class="w-36 h-24 md:w-full lg:h-60 md:h-36" style="min-width: 8.5rem;">
-                                <img class="w-full h-full object-center object-cover" src="img/1.jpeg" alt="">
+                                <img class="w-full h-full object-center object-cover" src="/Asset/img/1.jpeg" alt="">
                             </div>
                             <div class="md:px-3 lg:px-6">
                                 <h1 class="mb-3.5 text-main text-xl md:text-2xl font-medium">文章示範標題</h1>
@@ -602,7 +598,7 @@
             </div>
         </footer>
     </div>
-    <script src="js/case.js?v=202112062050"></script>
+    <script src="/Asset/js/case.js"></script>
 </body>
 
 </html>
