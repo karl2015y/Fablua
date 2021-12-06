@@ -8,8 +8,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 共用檔案 -->
-    <link href="/Asset/css/style.css?v=202112061100" rel="stylesheet">
-    <script src="/Asset/js/index.js?v=202112061100"></script>
+    <link href="/Asset/css/style.css?v=202112061845" rel="stylesheet">
+    <script src="/Asset/js/index.js?v=202112061845"></script>
     <!-- 該檔案的css -->
     <link rel="stylesheet" href="css/case.css">
     <!-- vue@2 -->
@@ -19,7 +19,7 @@
     <!-- Agile -->
     <script src="/Asset/plugin/VueAgile/VueAgile.min.js"></script>
     <link rel="stylesheet" href="/Asset/plugin/VueAgile/VueAgile.css">
-    <link rel="stylesheet" href="/Asset/css/agile.css?v=202112061100">
+    <link rel="stylesheet" href="/Asset/css/agile.css?v=202112061845">
     <!-- https://fonts.google.com/noto/specimen/Noto+Sans+TC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
 <body>
     <!-- <div class="xl:" style="position: fixed;top: 0;left: 0;width: 100vw;height: 5354px;background-image: url(https://upload.cc/i1/2021/11/30/JIrngt.jpg);z-index: 100;opacity: 1;background-size: contain;"></div> -->
     <!-- <div style="background-size: contain;position: fixed;top: 0;left: 0;width: 440px;height: 5354px;background-image: url(/zdesign/home/Fablua-Layout-1-Mobile.jpg);z-index: 100;opacity: 0.7;"></div> -->
-    <div id="app" class="">
+    <div id="app" class="text-third">
         <!-- 頁首 -->
         <header
             class="top-0 bg-white z-10 shadow sticky flex justify-between items-center h-16 md:h-32 px-10 md:px-14 lg:px-56">
@@ -106,19 +106,19 @@
         <div class="md:flex gap-9  px-10 md:px-14 lg:px-56">
             <div class="w-full md:w-2/3 ">
                 <!-- 文章示範標題 -->
-                <section class="relative py-8 md:py-20 md:border-b border-gray-500">
-                    <h1 class="mt-3 text-2xl text-main font-bold md:mt-0">文章示範標題</h1>
-                    <div class="mt-1.5 text-gray-400 md:mt-6">2021 / 11 / 28 Sun.</div>
-                    <div>
-                        <p class="my-8 md:mt-10 md:mb-6">A paragraph is a series of sentences that are organized and
+                <section class="relative py-10 md:pt-20 md:pb-0 md:border-b border-gray-500">
+                    <h1 class="mt-3 text-2xl md:text-3xl text-main font-bold md:mt-0">文章示範標題</h1>
+                    <div class="mt-1.5 text-gray-80 md:mt-6">2021 / 11 / 28 Sun.</div>
+                    <div class="py-8 md:py-14">
+                        <p class="md:mb-6">A paragraph is a series of sentences that are organized and
                             coherent, and are all related to a single topic. Almost every piece of writing you do that
                             is longer than a few sentences should be organized into paragraphs.</p>
-                        <img class="w-full h-44 md:h-80 object-center object-cover" src="img/1.jpeg" alt="">
-                        <p class="my-7 md:mt-9 md:mb-0">A paragraph is a series of sentences that are organized and
+                        <img class="mt-7 md:mt-9 w-full h-44 md:h-80 object-center object-cover" src="img/1.jpeg" alt="">
+                        <p class="mt-7 md:mt-9 md:mb-0">A paragraph is a series of sentences that are organized and
                             coherent, and are all related to a single topic. Almost every piece of writing you do that
                             is longer than a few sentences should be organized into paragraphs.</p>
                     </div>
-                    <div class="flex gap-4 py-1.5 md:absolute -right-2 top-14">
+                    <div class="flex gap-4 py-1.5 md:absolute right-0 top-14">
                         <a href="#twitter">
                             <svg class="w-9 h-9 md:w-8 md:h-8 p-1.5 shadow hover:bg-third"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.264 41.663">
@@ -174,28 +174,28 @@
                     </div>
                 </section>
                 <!-- ＯＯ企業有限公司 -->
-                <section ref="company_menu" class="pt-14">
+                <section ref="company_menu" class="pt-12">
                     <div class="flex justify-between md:justify-start md:gap-6">
                         <div class="w-28 h-28 md:w-40 md:h-40">
                             <img class="w-full h-full object-center object-cover" src="img/1.jpeg" alt="">
                         </div>
                         <div class="w-64 md:w-72 lg:w-96 flex flex-col justify-between md:justify-around">
                             <h1 class="text-2xl text-main font-bold">ＯＯ企業有限公司</h1>
-                            <div class="text-gray-400 pb-3.5 md:pb-0">企業英文名 / 其他相關簡要之附註資訊...</div>
+                            <div class="text-gray-99 pb-3.5 md:pb-0">企業英文名 / 其他相關簡要之附註資訊...</div>
                             <ul class="bg-white md:flex hidden mt-7 w-full justify-between">
-                                <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                                <li class="cursor-pointer w-1/4 text-center py-2.5"
                                     :class="{'md:border-b-4 border-b-2 border-sec':company_menu_current=='公司簡介'}">
                                     <div v-on:click="scroll2View('公司簡介')">公司簡介</div>
                                 </li>
-                                <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                                <li class="cursor-pointer w-1/4 text-center py-2.5"
                                     :class="{'md:border-b-4 border-b-2 border-sec':company_menu_current=='基本資訊'}">
                                     <div v-on:click="scroll2View('基本資訊')">基本資訊</div>
                                 </li>
-                                <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                                <li class="cursor-pointer w-1/4 text-center py-2.5"
                                     :class="{'md:border-b-4 border-b-2 border-sec':company_menu_current=='企業特色'}">
                                     <div v-on:click="scroll2View('企業特色')">企業特色</div>
                                 </li>
-                                <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                                <li class="cursor-pointer w-1/4 text-center py-2.5"
                                     :class="{'md:border-b-4 border-b-2 border-sec':company_menu_current=='地圖導覽'}">
                                     <div v-on:click="scroll2View('地圖導覽')">地圖導覽</div>
                                 </li>
@@ -203,27 +203,27 @@
                         </div>
                     </div>
                     <ul class="bg-white flex md:hidden mt-7 w-full justify-between">
-                        <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                        <li class="cursor-pointer w-1/4 text-center py-2.5"
                             :class="{'border-b-2 border-sec':company_menu_current=='公司簡介'}">
                             <div v-on:click="scroll2View('公司簡介', true)">公司簡介</div>
                         </li>
-                        <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                        <li class="cursor-pointer w-1/4 text-center py-2.5"
                             :class="{'border-b-2 border-sec':company_menu_current=='基本資訊'}">
                             <div v-on:click="scroll2View('基本資訊', true)">基本資訊</div>
                         </li>
-                        <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                        <li class="cursor-pointer w-1/4 text-center py-2.5"
                             :class="{'border-b-2 border-sec':company_menu_current=='企業特色'}">
                             <div v-on:click="scroll2View('企業特色', true)">企業特色</div>
                         </li>
-                        <li class="cursor-pointer w-1/4 text-center text-gray-600 py-2.5"
+                        <li class="cursor-pointer w-1/4 text-center py-2.5"
                             :class="{'border-b-2 border-sec':company_menu_current=='地圖導覽'}">
                             <div v-on:click="scroll2View('地圖導覽', true)">地圖導覽</div>
                         </li>
                     </ul>
                 </section>
                 <!-- 公司簡介 -->
-                <section ref="公司簡介" class="pt-10 md:pt-14">
-                    <h2 class="mb-7 md:mb-9 pl-2 border-l-2 md:border-l-4 text-xl md:text-2xl font-bold">公司簡介</h2>
+                <section ref="公司簡介" class="pt-10 md:pt-12">
+                    <h2 class="mb-7 md:mb-7 pl-2 border-l-2 md:border-l-4 text-xl md:text-2xl font-bold">公司簡介</h2>
                     <p>
                         A paragraph is a series of sentences that are organized and coherent, and are all related to a
                         single topic. Almost every piece of writing you do that is longer than a few sentences should be
@@ -231,24 +231,24 @@
                     </p>
                 </section>
                 <!-- 基本資訊 -->
-                <section ref="基本資訊" class="pt-10 md:pt-14">
-                    <h2 class="mb-7 md:mb-9 pl-2 border-l-2 md:border-l-4 text-xl md:text-2xl font-bold">基本資訊</h2>
+                <section ref="基本資訊" class="pt-10 md:pt-12">
+                    <h2 class="mb-7 md:mb-7 pl-2 border-l-2 md:border-l-4 text-xl md:text-2xl font-bold">基本資訊</h2>
 
                     <div class="flex gap-5 mb-3.5">
                         <div class="w-16 whitespace-nowrap text-third">成立時間</div>
-                        <div class="w-auto text-gray-400">2002 年</div>
+                        <div class="w-auto text-gray-99">2002 年</div>
                     </div>
                     <div class="flex gap-5 mb-3.5">
                         <div class="w-16 whitespace-nowrap text-third">產業類別</div>
-                        <div class="w-auto text-gray-400">電子科技業</div>
+                        <div class="w-auto text-gray-99">電子科技業</div>
                     </div>
                     <div class="flex gap-5 mb-3.5">
                         <div class="w-16 whitespace-nowrap text-third">服務項目</div>
-                        <div class="w-auto text-gray-400">程式設計 、 晶片硬體設備</div>
+                        <div class="w-auto text-gray-99">程式設計 、 晶片硬體設備</div>
                     </div>
                     <div class="flex gap-5 mb-3.5">
                         <div class="w-16 whitespace-nowrap text-third">人事聯絡</div>
-                        <div class="w-auto text-gray-400">高先生</div>
+                        <div class="w-auto text-gray-99">高先生</div>
                     </div>
                     <div class="flex gap-5 mb-3.5">
                         <div class="w-16 whitespace-nowrap text-third">聯絡電話</div>
@@ -256,7 +256,7 @@
                     </div>
                     <div class="flex gap-5 mb-3.5">
                         <div class="w-16 whitespace-nowrap text-third">聯絡地址</div>
-                        <div class="w-auto text-gray-400">台中市西區台灣大道二段 OO 號 O 樓 A 室假設內容太長請自動換行之</div>
+                        <div class="w-auto text-gray-99">台中市西區台灣大道二段 OO 號 O 樓 A 室假設內容太長請自動換行之</div>
                     </div>
                     <div class="flex gap-5 mb-3.5">
                         <div class="w-16 whitespace-nowrap text-third">電子信箱</div>
@@ -273,8 +273,8 @@
 
                 </section>
                 <!-- 企業特色 -->
-                <section ref="企業特色" class="pt-10 md:pt-14">
-                    <h2 class="mb-7 md:mb-9 pl-2 border-l-2 md:border-l-4 text-xl md:text-2xl font-bold">企業特色</h2>
+                <section ref="企業特色" class="pt-10 md:pt-12">
+                    <h2 class="mb-7 md:mb-7 pl-2 border-l-2 md:border-l-4 text-xl md:text-2xl font-bold">企業特色</h2>
                     <div class="flex w-11/12 gap-4 flex-wrap">
                         <a href="#台中">
                             <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
@@ -304,8 +304,8 @@
                     </div>
                 </section>
                 <!-- 地圖導覽 -->
-                <section ref="地圖導覽" class="pt-10 pb-7 border-b md:pt-14 md:pb-20 md:border-b-2">
-                    <h2 class="mb-7 md:mb-9 pl-2 border-l-2 md:border-l-4 text-xl md:text-2xl font-bold">地圖導覽</h2>
+                <section ref="地圖導覽" class="pt-10 pb-7 border-b md:pt-12 md:pb-20 md:border-b-2">
+                    <h2 class="mb-7 md:mb-7 pl-2 border-l-2 md:border-l-4 text-xl md:text-2xl font-bold">地圖導覽</h2>
                     <div class="w-full h-64 md:h-80">
                         <iframe class="w-full h-full"
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14460.031820041626!2d121.5645561!3d25.0338041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xacc4d11dc963103c!2z5Y-w5YyXMTAx!5e0!3m2!1szh-TW!2stw!4v1638585072870!5m2!1szh-TW!2stw"
@@ -319,9 +319,8 @@
                         <div class="w-20 h-20">
                             <img class="rounded-full w-full h-full object-center object-cover" src="img/1.jpeg" alt="">
                         </div>
-                        <div class="pt-4 md:pt-2.5 text-gray-600">
+                        <div class="pt-4 md:pt-2.5">
                             <div class="text-sm ">編輯者</div>
-                            <!-- 需要英文再開啟 -->
                             <h1 class="text-xl md:text-lg font-bold inline Mix-font">李克莉Eng</h1>
                         </div>
                     </div>
@@ -341,8 +340,8 @@
                     </div>
                 </section>
                 <!-- 更多相關文章 ... -->
-                <section class="py-7">
-                    <div class="text-sm text-gray-400 mb-9">更多相關文章 ...</div>
+                <section class="py-7 md:pb-12">
+                    <div class="text-sm text-gray-80 mb-9">更多相關文章 ...</div>
                     <div class="flex flex-col md:flex-row md:gap-11 lg:gap-20 md:mb-7">
                         <div v-for="i in 2"
                             class="flex gap-5 md:gap-3 mb-7 md:mb-0 md:pb-4 md:flex-col md:w-80 md:hover:shadow-2xl hover:shadow">
@@ -362,8 +361,8 @@
                 <!-- Latest Post -->
                 <section class="pt-16 md:pt-20">
                     <h1 class="MW-font font-bold text-2xl md:text-xl">Latest Post</h1>
-                    <div class="border-t border-gray-500 md:pt-5 mt-4 pt-7">
-                        <ul class="flex flex-col gap-3 md:gap-4 text-third">
+                    <div class="border-t border-gray-500 md:pt-6 mt-5 pt-7">
+                        <ul class="flex flex-col gap-6 md:gap-5 text-third">
                             <li>
                                 <a href="#文章示範標題" class="visited:text-gray-500 hover:text-sec">文章示範標題(一)</a>
                             </li>
@@ -388,16 +387,16 @@
                         <div class=" bg-gray-200 w-full h-full text-white flex justify-center items-center text-3xl">Ads
                         </div>
                     </div>
-                    <div class="pt-6 w-full" style="height: 31.25vw;">
+                    <div class="pt-5 w-full" style="height: 31.25vw;">
                         <div class="bg-gray-200 w-full h-full text-white flex justify-center items-center text-3xl">Ads
                         </div>
                     </div>
                 </section>
 
                 <!-- Tags -->
-                <section class="pt-14 md:pt-6">
+                <section class="pt-14 md:pt-9">
                     <h1 class="MW-font font-bold text-2xl md:text-xl">Tags</h1>
-                    <div class="border-t border-gray-500 md:pt-5 mt-4 pt-7">
+                    <div class="border-t border-gray-500 md:pt-6 mt-5 pt-7">
                         <div class="flex w-full gap-4 flex-wrap">
                             <a href="#台中">
                                 <div class="py-1 px-3.5 bg-gray-100 rounded-2xl hover:bg-sec hover:text-white">
@@ -433,12 +432,12 @@
                     </div>
                 </section>
                 <!-- 電腦 廣告 -->
-                <section class="hidden md:block ">
-                    <div class="pt-6 w-full h-60">
+                <section class="hidden md:block pt-14 md:pt-9">
+                    <div class=" w-full h-60">
                         <div class=" bg-gray-200 w-full h-full text-white flex justify-center items-center text-3xl">Ads
                         </div>
                     </div>
-                    <div class="pt-6 w-full h-28">
+                    <div class="pt-5 w-full h-28">
                         <div class="bg-gray-200 w-full h-full text-white flex justify-center items-center text-3xl">Ads
                         </div>
                     </div>
@@ -452,10 +451,10 @@
 
                 </section>
                 <!-- Links -->
-                <section class="pt-16 md:pt-6">
+                <section class="pt-16 md:pt-9">
                     <h1 class="MW-font font-bold text-2xl md:text-xl">Links</h1>
-                    <div class="border-t border-gray-500 md:pt-5 mt-4 pt-7">
-                        <ul class="flex flex-col gap-3 md:gap-4 text-third">
+                    <div class="border-t border-gray-500 md:pt-6 mt-5 pt-7">
+                        <ul class="flex flex-col gap-6 md:gap-5 text-third">
                             <li>
                                 <a href="#友站連結" class="visited:text-gray-500 hover:text-sec">友站連結</a>
                             </li>
@@ -495,7 +494,7 @@
                         <!-- <h1 class="text-2xl MW-font font-bold ">Fabula</h1> -->
                         <div><img src="/Asset/icon/Logo-w.png" alt=""
                                 class="w-24 h-12 object-center object-contain md:w-28 md:h-14"></div>
-                        <span class="hidden md:block mt-1.5 text-gray-400 text-xs">
+                        <span class="hidden md:block mt-1.5 text-gray-99 text-xs">
                             Copyright © 2021 Fabula.<br>
                             All rights reserved.
                         </span>
@@ -598,12 +597,12 @@
 
                 </div>
             </div>
-            <div class="md:hidden mt-9 text-gray-400 text-xs">
+            <div class="md:hidden mt-9 text-gray-99 text-xs">
                 Copyright © 2021 Fabula. All rights reserved.
             </div>
         </footer>
     </div>
-    <script src="js/case.js?v=202112061100"></script>
+    <script src="js/case.js?v=202112061845"></script>
 </body>
 
 </html>
